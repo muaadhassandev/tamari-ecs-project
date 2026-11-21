@@ -1,0 +1,129 @@
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='meal-planner-upcoming.css', _external=True) }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		<div id="recipenav"> 
+			<div class="recipenavleft">
+				<div class="recipenavleft-inner">
+					<input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerCalendar') }}';" value="{{ _('Calendar') }}" aria-label="{{ _('Navigate to Meal Planner (Calendar)') }}"
+					><input type="button" class="recbtn recbtn-active" onclick="window.location.href='{{ url_for('mealplanner.mealPlanner') }}';" value="{{ _('Upcoming') }}" aria-label="{{ _('Navigate to Meal Planner (Upcoming)') }}"
+					><input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerCompleted') }}';" value="{{ _('Completed') }}" aria-label="{{ _('Navigate to Meal Planner (Completed)') }}"
+					><input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerStatistics') }}';" value="{{ _('Statistics') }}" aria-label="{{ _('Navigate to Meal Planner (Statistics)') }}">
+				</div>
+				<div class="scroll-arrow-recip scroll-right-recip">
+					<img id="scroll-right-recip" src="{{ url_for('static', filename='navbar-scroll-right.png', _external=True) }}" alt="Scroll Right">
+				</div>
+				<div class="scroll-arrow-recip scroll-left-recip">
+					<img id="scroll-left-recip" src="{{ url_for('static', filename='navbar-scroll-left.png', _external=True) }}" alt="Scroll Left">
+				</div>
+			</div>
+		</div>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		{% set first_message = true %}
+		{% for message in messages %}
+		{% if first_message %}
+		{% if 'Error' in message or '错误' in message %}
+		<p id="flashed-err">{{ message }}</p>
+		{% set first_message = false %}
+		{% else %}
+		<p id="flashed-norm">{{ message }}</p>
+		{% set first_message = false %}
+		{% endif %}
+		{% else %}
+		<p style="display: none;">{{ message }}</p>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+		<div id="b1left">
+			<div class="b1leftinner">
+				<div{% if query_string is none%} class="list-selected"{% endif %}{% if query_string == 'All' %} class="list-selected"{% endif %}>
+					<span class="day-label"><a href="{{ url_for('mealplanner.mealPlanner', day='All') }}">{{ _('All Upcoming Days') }}</a></span>
+				</div>
+				{% for m in month_with_meals %}
+				<div{% if query_string == m[0] %} class="list-selected"{% endif %}>
+					<span class="day-label"><a href="{{ url_for('mealplanner.mealPlanner', day=m[0]) }}">{{ m[1] }}</a></span>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div id="b1right">
+			{% if query_string is none or query_string == 'All' %}
+			<h2>{{ _('All Planned Recipes') }}</h2>
+			{% if mealsinmonth %} 
+			{% for day in month %}
+			{% if day[0] in dayswithmeals %}<h3>{{ day[1] }}</h3>{% endif %}
+			{% if day[0] in dayswithmeals %}
+			<div class="planinner">
+				{% for meal in plannedmeals %}
+				{% if meal.date == day[0] %}
+				<div>
+					<button class="btn4-default" onclick="window.location.href='{{ url_for('mealplanner.removePlan', hexid=meal.hex_id) }}';" aria-label="{{ _('Remove Meal Plan') }} {{ recdetails[loop.index0][0] }}">
+						<span class="btn4-icon"><img class="trashimg" src="{{ url_for('static', filename='trash.png', _external=True) }}" alt="{{ _('Remove Meal Plan') }} {{ recdetails[loop.index0][0] }}"></span>
+					</button>
+					<p class="label-inner">
+						<span class="plan-label"><a href="{{ url_for('myrecipes.recipeDetail', hexid=recdetails[loop.index0][2]) }}">{{ recdetails[loop.index0][0] }}</a></span>
+						<span class="plan-category">{{ recdetails[loop.index0][1] }}</span>
+					</p>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
+			{% endfor %}
+			{% else %}
+			<p id="mealmessage">{{ _('You have no recipes saved to the meal planner.') }}</p>
+			{% endif %}
+			{% else %}
+			{% if query_string in compactmonth %}
+			<h2>{{ query_string_full }}</h2>
+			{% if query_count == 0 %}<p id="mealmessage">{{ _('There are no meals planned for the selected day.') }}</p>{% endif %}
+			<div class="planinner">
+				{% for meal in plannedmeals %}
+				{% if meal.date == query_string %}
+				<div>
+					<button class="btn4-default" onclick="window.location.href='{{ url_for('mealplanner.removePlan', hexid=meal.hex_id) }}';" aria-label="{{ _('Remove Meal Plan') }} {{ recdetails[loop.index0][0] }}">
+						<span class="btn4-icon"><img class="trashimg" src="{{ url_for('static', filename='trash.png', _external=True) }}" alt="{{ _('Remove Meal Plan') }} {{ recdetails[loop.index0][0] }}"></span>
+					</button>
+					<p class="label-inner">
+						<span class="plan-label"><a href="{{ url_for('myrecipes.recipeDetail', hexid=recdetails[loop.index0][2]) }}">{{ recdetails[loop.index0][0] }}</a></span>
+						<span class="plan-category">{{ recdetails[loop.index0][1] }}</span>
+					</p>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% else %}
+			<h2>{{ _('Invalid Date') }}</h2>
+			<p id="mealmessage">{{ _('The requested date is invalid or cannot be searched.') }}</p>
+			{% endif %}
+			{% endif %}
+
+		</div>
+
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}

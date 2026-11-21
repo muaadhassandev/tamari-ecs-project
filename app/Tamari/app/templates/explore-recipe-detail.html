@@ -1,0 +1,187 @@
+
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='explore-recipe-detail.css', _external=True) }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		{% set first_message = true %}
+		{% for message in messages %}
+		{% if first_message %}
+		{% if 'Error' in message or '错误' in message %}
+		<p id="flashed-err">{{ message }}</p>
+		{% set first_message = false %}
+		{% else %}
+		<p id="flashed-norm">{{ message }}</p>
+		{% set first_message = false %}
+		{% endif %}
+		{% else %}
+		<p style="display: none;">{{ message }}</p>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+		{% if rec_title and rec_url %}
+		{% if ingredients and instructions %}
+		<div id="r-detail">
+			<h2>{{ rec_title }}</h2>
+			<div class="mobile-image-inner">
+				<div class="mobile-image" style="background-image: url('{{ photo_server }}');"></div>
+			</div>
+			{% if description %}
+			<p>{{ description }}</p>
+			{% endif %}
+			{% if servings %}
+			<p>{{ servings }} {{ _('Servings') }}</p>
+			{% endif %}
+			{% if nutrition %}
+			<table>
+				<tr>
+				  	<th>{{ _('Nutrition (1 serv.)') }}</th>
+				  	<th>{{ _('Amount') }}</th>
+				  	<th class="t-col-4">{{ _('Nutrition (1 serv.)') }}</th>
+				  	<th class="t-col-4">{{ _('Amount') }}</th>
+				</tr>
+				<tr>
+				  	<td>{{ _('Calories') }}</td>
+				  	<td>{% if calories %}{{ calories }} kcal{% else %}–{% endif %}</td>
+				  	<td class="t-col-4">{{ _('Sugar') }}</td>
+					<td class="t-col-4">{% if sugar %}{{ sugar }} g{% else %}–{% endif %}</td>
+				</tr>
+				<tr>
+				  	<td>{{ _('Carbs') }}</td>
+				  	<td>{% if carbs %}{{ carbs }} g{% else %}–{% endif %}</td>
+				  	<td class="t-col-4">{{ _('Cholesterol') }}</td>
+					<td class="t-col-4">{% if cholesterol %}{{ cholesterol }} mg{% else %}–{% endif %}</td>
+				</tr>
+				<tr>
+				  	<td>{{ _('Protein') }}</td>
+				  	<td>{% if protein %}{{ protein }} g{% else %}–{% endif %}</td>
+				  	<td class="t-col-4">{{ _('Sodium') }}</td>
+					<td class="t-col-4">{% if sodium %}{{ sodium }} mg{% else %}–{% endif %}</td>
+				</tr>
+				<tr>
+					<td>{{ _('Fat') }}</td>
+					<td>{% if fat %}{{ fat }} g{% else %}–{% endif %}</td>
+					<td class="t-col-4">{{ _('Fiber') }}</td>
+					<td class="t-col-4">{% if fiber %}{{ fiber }} g{% else %}–{% endif %}</td>
+				</tr>
+				<tr class="t-col-2">
+					<td>{{ _('Sugar') }}</td>
+				  	<td>{% if sugar %}{{ sugar }} g{% else %}–{% endif %}</td>
+			  	</tr>
+			  	<tr class="t-col-2">
+					<td>{{ _('Cholesterol') }}</td>
+				  	<td>{% if cholesterol %}{{ cholesterol }} mg{% else %}–{% endif %}</td>
+			  	</tr>
+			  	<tr class="t-col-2">
+					<td>{{ _('Sodium') }}</td>
+				  	<td>{% if sodium %}{{ sodium }} mg{% else %}–{% endif %}</td>
+			  	</tr>
+			  	<tr class="t-col-2">
+				  	<td>{{ _('Fiber') }}</td>
+				  	<td>{% if fiber %}{{ fiber }} g{% else %}–{% endif %}</td>
+			  	</tr>
+			</table>
+			{% endif %}
+			<p>
+				{% if preptime %}<span class="timeouter"><span class="timebold">{{ _('Prep Time') }}:</span> {{ preptime }} min</span>{% endif %}
+				{% if cooktime %}<span class="timeouter"><span class="timebold">{{ _('Cook Time') }}:</span> {{ cooktime }} min</span>{% endif %}
+				{% if totaltime %}<span class="timeouter"><span class="timebold">{{ _('Total Time') }}:</span> {{ totaltime }} min</span>{% endif %}
+			</p>
+			{% if rec_url %}
+			<p><a class="urla" href="{{ rec_url }}" target="_blank" aria-label="{{ _('Original recipe URL') }}">{{ rec_url }}</a></p>
+			{% endif %}
+			{% if current_user.is_authenticated %}
+			<form method="post" class="buttonform" novalidate>
+				{{ form.hidden_tag() }}
+				<button class="btn btn-default" name="submit" type="submit" aria-label="{{ _('Save Recipe') }}">
+                    <span class="btn-icon"><img id="saveimg" src="{{ url_for('static', filename='save.png', _external=True) }}" alt="{{ _('Save Recipe') }}"></span>
+                    <span class="btn-text">{{ _('Save Recipe') }}</span>
+                </button>
+			</form>
+			{% else %}
+			<button class="btn btn-default buttonform" name="submit" type="submit" disabled style="cursor: not-allowed;" aria-label="{{ _('Login to Save Recipe') }}">
+                <span class="btn-icon"><img id="saveimg" src="{{ url_for('static', filename='save.png', _external=True) }}" alt="{{ _('Login to Save Recipe') }}"></span>
+                <span class="btn-text">{{ _('Login to Save Recipe') }}</span>
+            </button>
+			{% endif %}
+			<!-- Regardless of whether user is signed in, a Print Recipe button is displayed -->
+			<!-- Upon clicking this button, a POST request is submitted to explorePrintRecipe route -->
+			<form action="{{ url_for('explore.explorePrintRecipe') }}" method="POST" class="buttonform" style="display:inline;">
+				<input type="hidden" name="rec_title" value="{{ rec_title|e }}">
+				<input type="hidden" name="description" value="{{ description|e }}">
+				<input type="hidden" name="preptime" value="{{ preptime|e }}">
+				<input type="hidden" name="cooktime" value="{{ cooktime|e }}">
+				<input type="hidden" name="totaltime" value="{{ totaltime|e }}">
+				<input type="hidden" name="servings" value="{{ servings|e }}">
+				<input type="hidden" name="rec_url" value="{{ rec_url|e }}">
+				<input type="hidden" name="calories" value="{{ calories|e }}">
+				<input type="hidden" name="carbs" value="{{ carbs|e }}">
+				<input type="hidden" name="protein" value="{{ protein|e }}">
+				<input type="hidden" name="fat" value="{{ fat|e }}">
+				<input type="hidden" name="sugar" value="{{ sugar|e }}">
+				<input type="hidden" name="cholesterol" value="{{ cholesterol|e }}">
+				<input type="hidden" name="sodium" value="{{ sodium|e }}">
+				<input type="hidden" name="fiber" value="{{ fiber|e }}">
+
+				<!-- Using textarea instead because input is very long -->
+				<textarea name="ingredients" style="display:none;">{{ ingredients|join('\n')|e }}</textarea>
+				<textarea name="instructions" style="display:none;">{{ instructions|join('\n')|e }}</textarea>
+
+				<button class="btn btn-default" type="submit" aria-label="{{ _('Print Recipe') }}">
+					<span class="btn-icon"><img id="printimg" src="{{ url_for('static', filename='print.png', _external=True) }}" alt="{{ _('Print') }}"></span>
+					<span class="btn-text">{{ _('Print') }}</span>
+				</button>
+			</form>
+		</div>
+		<div id="r-image" style="background-image: url('{{ photo_server }}');"></div>
+		<div id="ingredients">
+			<h3>{{ _('Ingredients') }}</h3>
+			<div id="inginner" class="inginner">
+				{% for item in ingredients %}
+				<div><p class="ing">{{ item }}</p></div>
+				{% endfor %}
+			</div>
+		</div>
+		<div id="instructions">
+			<h3>{{ _('Instructions') }}</h3>
+			{% for item in instructions %}
+			<div class="steps"><b>{{ _('Step') }} {{ loop.index }}</b><p>{{ item }}</p></div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<h2 class="recipe-error">{{ _('Error') }}</h2>
+		<p class="recipe-error">{{ _('The retrieval or parsing of data for the requested recipe failed.') }}</p>
+		<p class="recipe-error">{{ _('Sometimes, refreshing the page will fix it.') }}</p>
+		<p class="recipe-error">{{ _('If you see this error frequently, opening an Issue Report on Github may help get it resolved.') }}</p>
+		{% endif %}
+		{% else %}
+		<h2 class="recipe-error">{{ _('Error') }}</h2>
+		<p class="recipe-error">{{ _('The requested recipe cannot be found.') }}</p>
+		{% endif %}
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}

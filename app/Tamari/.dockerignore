@@ -1,0 +1,12 @@
+.env
+.git
+__pycache__/
+logs/
+app/appdata/secrets/
+app/appdata/migrations/
+app/appdata/*.db*
+app/appdata/recipe-photos/*
+!app/appdata/recipe-photos/default*.png
+!app/appdata/recipe-photos/default*.jpg
+!app/appdata/recipe-photos/demo*.png
+!app/appdata/recipe-photos/demo*.jpg

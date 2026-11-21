@@ -1,0 +1,102 @@
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='meal-planner-completed.css', _external=True) }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		<div id="recipenav"> 
+			<div class="recipenavleft">
+				<div class="recipenavleft-inner">
+					<input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerCalendar') }}';" value="{{ _('Calendar') }}" aria-label="{{ _('Navigate to Meal Planner (Calendar)') }}"
+					><input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlanner') }}';" value="{{ _('Upcoming') }}" aria-label="{{ _('Navigate to Meal Planner (Upcoming)') }}"
+					><input type="button" class="recbtn recbtn-active" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerCompleted') }}';" value="{{ _('Completed') }}" aria-label="{{ _('Navigate to Meal Planner (Completed)') }}"
+					><input type="button" class="recbtn" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerStatistics') }}';" value="{{ _('Statistics') }}" aria-label="{{ _('Navigate to Meal Planner (Statistics)') }}">
+				</div>
+				<div class="scroll-arrow-recip scroll-right-recip">
+					<img id="scroll-right-recip" src="{{ url_for('static', filename='navbar-scroll-right.png', _external=True) }}" alt="Scroll Right">
+				</div>
+				<div class="scroll-arrow-recip scroll-left-recip">
+					<img id="scroll-left-recip" src="{{ url_for('static', filename='navbar-scroll-left.png', _external=True) }}" alt="Scroll Left">
+				</div>
+			</div>
+		</div>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		{% set first_message = true %}
+		{% for message in messages %}
+		{% if first_message %}
+		{% if 'Error' in message or '错误' in message %}
+		<p id="flashed-err">{{ message }}</p>
+		{% set first_message = false %}
+		{% else %}
+		<p id="flashed-norm">{{ message }}</p>
+		{% set first_message = false %}
+		{% endif %}
+		{% else %}
+		<p style="display: none;">{{ message }}</p>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+		<h2>{{ _('Completed Recipes') }}</h2>
+		{% if mealsinfiveyear %} 
+		{% for day in fiveyear %}
+		{% if day[0] in dayspaginated %}<h3>{{ day[1] }}</h3>{% endif %}
+		{% if day[0] in dayspaginated %}
+		<div class="planinner">
+			{% for meal in plannedmeals_paginated %}
+			{% if meal.date == day[0] %}
+			<div>
+				<p class="label-inner">
+					<span class="plan-label"><a href="{{ url_for('myrecipes.recipeDetail', hexid=recdetails[loop.index0][2]) }}">{{ recdetails[loop.index0][0] }}</a></span>
+					<span class="plan-category">{{ recdetails[loop.index0][1] }}</span>
+				</p>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+		{% endif %}
+		{% endfor %}
+		{% else %}
+		<p id="mealmessage">{{ _('Previously prepared recipes will be displayed here.') }}</p>
+		{% endif %}
+		{% if prev_url or next_url %}
+		<div class="prevnext">
+			{% if prev_url %}
+			<button class="btn-prev" onclick="window.location.href='{{ prev_url }}';" aria-label="{{ _('Navigate to previous page') }}">
+				<span class="btn-prev-icon"><img id="previmg" src="{{ url_for('static', filename='prev.png', _external=True) }}" alt="{{ _('Previous') }}"></span>
+				<span class="btn-prev-text">{{ _('Previous') }}</span>
+			</button>
+			{% endif %}
+			{% if next_url %}
+			<button class="btn-next" onclick="window.location.href='{{ next_url }}';" aria-label="{{ _('Navigate to next page') }}">
+				<span class="btn-next-text">{{ _('Next') }}</span>
+				<span class="btn-next-icon"><img id="nextimg" src="{{ url_for('static', filename='next.png', _external=True) }}" alt="{{ _('Next') }}"></span>
+			</button>
+			{% endif %}
+		</div>
+		{% endif %}
+
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}

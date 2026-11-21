@@ -1,0 +1,364 @@
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='explore.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<script src="{{ url_for('static', filename='explore-image-loader.js', _external=True) }}"></script>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		{% if rec_all %}
+		
+		<div class="searchform">
+			<form method="post" novalidate>
+				{{ form.hidden_tag() }}
+				{{ form.search(class="search-input", id="exploresearch", placeholder=_('Search 400,000+ Recipes')) }}
+				<button class="search-btn" name="submit" type="submit">
+					<span class="searchbtn-icon"><img id="searchimg" src="{{ url_for('static', filename='search.png', _external=True) }}" alt="{{ _('Search recipes') }}"></span>
+				</button>
+			</form> 
+		</div>
+		<h2>{{ _('Browse By Category') }}</h2>
+		<div class="expcatcontainer">
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='30-minute') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('30 Minute Meals') }}" src="{{ url_for('static', filename='explore-icon-30minute.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='30-minute') }}" class="expcatlabel" title="{{ _('30 Minute') }}">{{ _('30 Minute') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='air-fryer') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Air Fryer') }}" src="{{ url_for('static', filename='explore-icon-airfryer.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='air-fryer') }}" class="expcatlabel" title="{{ _('Air Fryer') }}">{{ _('Air Fryer') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='beef') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Beef') }}" src="{{ url_for('static', filename='explore-icon-beef.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='beef') }}" class="expcatlabel" title="{{ _('Beef') }}">{{ _('Beef') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='breakfast') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Breakfast') }}" src="{{ url_for('static', filename='explore-icon-breakfast.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='breakfast') }}" class="expcatlabel" title="{{ _('Breakfast') }}">{{ _('Breakfast') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='chicken') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Chicken') }}" src="{{ url_for('static', filename='explore-icon-chicken.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='chicken') }}" class="expcatlabel" title="{{ _('Chicken') }}">{{ _('Chicken') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='dessert') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Dessert') }}" src="{{ url_for('static', filename='explore-icon-dessert.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='dessert') }}" class="expcatlabel" title="{{ _('Dessert') }}">{{ _('Dessert') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='dinner') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Dinner') }}" src="{{ url_for('static', filename='explore-icon-dinner.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='dinner') }}" class="expcatlabel" title="{{ _('Dinner') }}">{{ _('Dinner') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='drinks') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Drinks') }}" src="{{ url_for('static', filename='explore-icon-drinks.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='drinks') }}" class="expcatlabel" title="{{ _('Drinks') }}">{{ _('Drinks') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='low-carb') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Low Carb') }}" src="{{ url_for('static', filename='explore-icon-lowcarb.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='low-carb') }}" class="expcatlabel" title="{{ _('Low Carb') }}">{{ _('Low Carb') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='lunch') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Lunch') }}" src="{{ url_for('static', filename='explore-icon-lunch.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='lunch') }}" class="expcatlabel" title="{{ _('Lunch') }}">{{ _('Lunch') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='salads') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Salads') }}" src="{{ url_for('static', filename='explore-icon-salads.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='salads') }}" class="expcatlabel" title="{{ _('Salads') }}">{{ _('Salads') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='seafood') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Seafood') }}" src="{{ url_for('static', filename='explore-icon-seafood.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='seafood') }}" class="expcatlabel" title="{{ _('Seafood') }}">{{ _('Seafood') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='slow-cooker') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Slow Cooker') }}" src="{{ url_for('static', filename='explore-icon-slowcooker.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='slow-cooker') }}" class="expcatlabel" title="{{ _('Slow Cooker') }}">{{ _('Slow Cooker') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='snacks') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Snacks') }}" src="{{ url_for('static', filename='explore-icon-snacks.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='snacks') }}" class="expcatlabel" title="{{ _('Snacks') }}">{{ _('Snacks') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='soup') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Soup') }}" src="{{ url_for('static', filename='explore-icon-soup.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='soup') }}" class="expcatlabel" title="{{ _('Soup') }}">{{ _('Soup') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='vegetarian') }}" tabindex="-1">
+				<div class="iconcontainer">
+					<img alt="{{ _('Vegetarian') }}" src="{{ url_for('static', filename='explore-icon-vegetarian.png', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='vegetarian') }}" class="expcatlabel" title="{{ _('Vegetarian') }}">{{ _('Vegetarian') }}</a>
+		</div>
+		</div>
+		<h2>{{ _('Browse By Country') }}</h2>
+		<div class="expcatcontainer">
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='australia') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Australia') }}" src="{{ url_for('static', filename='country-flag-icons/AU.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='australia') }}" class="expcatlabel" title="{{ _('Australia') }}">{{ _('Australia') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='austria') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Austria') }}" src="{{ url_for('static', filename='country-flag-icons/AT.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='austria') }}" class="expcatlabel" title="{{ _('Austria') }}">{{ _('Austria') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='belgium') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Belgium') }}" src="{{ url_for('static', filename='country-flag-icons/BE.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='belgium') }}" class="expcatlabel" title="{{ _('Belgium') }}">{{ _('Belgium') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='canada') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Canada') }}" src="{{ url_for('static', filename='country-flag-icons/CA.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='canada') }}" class="expcatlabel" title="{{ _('Canada') }}">{{ _('Canada') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='denmark') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Denmark') }}" src="{{ url_for('static', filename='country-flag-icons/DK.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='denmark') }}" class="expcatlabel" title="{{ _('Denmark') }}">{{ _('Denmark') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='france') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('France') }}" src="{{ url_for('static', filename='country-flag-icons/FR.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='france') }}" class="expcatlabel" title="{{ _('France') }}">{{ _('France') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='germany') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Germany') }}" src="{{ url_for('static', filename='country-flag-icons/DE.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='germany') }}" class="expcatlabel" title="{{ _('Germany') }}">{{ _('Germany') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='greece') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Greece') }}" src="{{ url_for('static', filename='country-flag-icons/GR.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='greece') }}" class="expcatlabel" title="{{ _('Greece') }}">{{ _('Greece') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='india') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('India') }}" src="{{ url_for('static', filename='country-flag-icons/IN.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='india') }}" class="expcatlabel" title="{{ _('India') }}">{{ _('India') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='ireland') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Ireland') }}" src="{{ url_for('static', filename='country-flag-icons/IE.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='ireland') }}" class="expcatlabel" title="{{ _('Ireland') }}">{{ _('Ireland') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='italy') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Italy') }}" src="{{ url_for('static', filename='country-flag-icons/IT.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='italy') }}" class="expcatlabel" title="{{ _('Italy') }}">{{ _('Italy') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='japan') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Japan') }}" src="{{ url_for('static', filename='country-flag-icons/JP.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='japan') }}" class="expcatlabel" title="{{ _('Japan') }}">{{ _('Japan') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='netherlands') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Netherlands') }}" src="{{ url_for('static', filename='country-flag-icons/NL.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='netherlands') }}" class="expcatlabel" title="{{ _('Netherlands') }}">{{ _('Netherlands') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='philippines') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Philippines') }}" src="{{ url_for('static', filename='country-flag-icons/PH.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='philippines') }}" class="expcatlabel" title="{{ _('Philippines') }}">{{ _('Philippines') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='poland') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Poland') }}" src="{{ url_for('static', filename='country-flag-icons/PL.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='poland') }}" class="expcatlabel" title="{{ _('Poland') }}">{{ _('Poland') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='spain') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Spain') }}" src="{{ url_for('static', filename='country-flag-icons/ES.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='spain') }}" class="expcatlabel" title="{{ _('Spain') }}">{{ _('Spain') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='sweden') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Sweden') }}" src="{{ url_for('static', filename='country-flag-icons/SE.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='sweden') }}" class="expcatlabel" title="{{ _('Sweden') }}">{{ _('Sweden') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='switzerland') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('Switzerland') }}" src="{{ url_for('static', filename='country-flag-icons/CH.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='switzerland') }}" class="expcatlabel" title="{{ _('Switzerland') }}">{{ _('Switzerland') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='unitedkingdom') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('United Kingdom') }}" src="{{ url_for('static', filename='country-flag-icons/GB.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='unitedkingdom') }}" class="expcatlabel" title="{{ _('United Kingdom') }}">{{ _('United Kingdom') }}</a>
+		</div>
+		<div class="expcat">
+			<a href="{{ url_for('explore.exploreGroup', group='unitedstates') }}" class="country-icon-link" tabindex="-1">
+				<div class="iconcontainer flag-iconcontainer">
+					<img alt="{{ _('United States') }}" src="{{ url_for('static', filename='country-flag-icons/US.svg', _external=True) }}">
+				</div>
+			</a>
+			<a href="{{ url_for('explore.exploreGroup', group='unitedstates') }}" class="expcatlabel" title="{{ _('United States') }}">{{ _('United States') }}</a>
+		</div>
+		</div>
+		<h2>{{ _('All Recipes') }} 🍽️</h2>
+		<div id="recipecont" class="recipe2cont">
+			{% for recipe in rec_all %}
+			<a href="{{ url_for('explore.exploreRecipeDetail', recnum=recipe[3], rec_group='all') }}" class="r2a" tabindex="-1">
+			<div class="recipe2">
+				<div class="recipe2inner">
+					<div class="r2top" style="background-image: url('{{ url_for('myrecipes.recipePhotos', filename=default_photos[(loop.index - 1) % default_photos|length], _external=True) }}')" data-bgimage="{{ recipe[4] }}"></div>
+					<div class="r2bottom">
+						<div tabindex="0">{{ recipe[0] }}</div>
+						<span>{{ recipe[1] }}</span>
+					</div>
+				</div>
+			</div>
+			</a>
+			{% endfor %}
+			<a href="{{ url_for('explore.exploreGroup', group='all') }}" class="r2a" tabindex="-1">
+			<div class="recipe2">
+				<div class="recipe2inner r2seemore">
+					<div class="r2top r2seemore" data-bgimage=""><span class="r2seemorespan" tabindex="0">{{ _('See More') }}</span></div>
+					<div class="r2bottom"></div>
+				</div>
+			</div>
+			</a>
+		</div>
+	
+		{% else %}
+		<h2 class="errorh2">{{ _('Error') }}</h2>
+		<p>{{ _('Recipes failed to load.') }}</p>
+		{% endif %}
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}

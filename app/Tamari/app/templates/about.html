@@ -1,0 +1,62 @@
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='about.css', _external=True) }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		<p>{{ _('Tamari is open source software provided with GNU General Public License v3.0.') }}</p>
+		<span class="version">{{ _('Version') }} {{ app_version }}</span>
+		<h3>{{ _('Credits') }}</h3>
+		<div class="pblock credits">
+			{{ _('Developed by Alex Bates.') }}<br><br>
+			{{ _('Profile picture and Explore category icons designed by Arsyadi Yulian.') }}<br><br>
+			{{ _('Icons used by buttons and default recipe photos are licensed via the Noun Project.') }}<br><br>
+			{{ _('Inter font is licensed under the SIL Open Font License 1.1.') }}<br><br>
+			{{ _('The jQuery library is licensed under the MIT License.') }}
+		</div>
+		<h3>{{ _('Changelog') }}</h3>
+		<div class="pblock changelog">
+			<b>{{ _('Version') }} 1.7.3:</b> Fixed a CSRF vulnerability in account deletion.<br><br>
+			<b>{{ _('Version') }} 1.7.2:</b> Fixed vulnerabilities in email validation and recipe autofill. Improved autofill error messages and added a button to clear completed shopping list items.<br><br>
+			<b>{{ _('Version') }} 1.7.1:</b> Fix for security vulnerability.<br><br>
+			<b>{{ _('Version') }} 1.7:</b> Expanded the Explore page with a new Browse by Country section, increased the recipe library from 100,000 to 400,000 recipes, and expanded supported sites from 50 to 300. Implemented ingredient parsing and combining when adding items to a shopping list. Also implemented several security improvements and vulnerability fixes.<br><br>
+			<b>{{ _('Version') }} 1.6:</b> Redesign of light and dark themes to modernize the look and feel. Implemented optional sectioning to ingredients and instructions, section tiles are marked by # symbol. Added optional notes field to recipes. Fixes to version 1.5 display issues.<br><br>
+			<b>{{ _('Version') }} 1.5:</b> Replaced the hamburger menu on mobile devices with a bottom-positioned tab bar that includes custom-designed icons. Made the navbar and several other components on all pages fixed position to improve usability on mobile devices.<br><br>
+			<b>{{ _('Version') }} 1.4:</b> Increased maximum width from 1000px to 1300px to improve usability on tablets and desktop computers. Added a zoom effect on hover for Type 1 recipes. Created a Meal Planner Statistics page that includes charts and data regarding days cooked, recipes prepared, and popular categories. Added support for the Japanese language.<br><br>
+			<b>{{ _('Version') }} 1.3:</b> Redesigned Login/Register pages with moving star effect and larger scaling. Implemented option to sort by Last Prepared in My Recipes. Added title attributes to many buttons to provide hover labels. Adjusted animations for popup modals. Bug fixes and other display improvements.<br><br>
+			<b>{{ _('Version') }} 1.2:</b> Redesigned the Meal Planner; a new Calendar page displays all meals planned for the current month. Days on the calendar can be clicked to view recipes planned for that day, and recipes can be scheduled with one click. Added a Recents page to My Recipes that displays the most recently viewed recipes. Redesigned page navigation buttons in My Recipes, Meal Planner, and Account. Added an Advanced Search page that allows searching recipes by Title, Category, Ingredients, and Instructions. It is accessible by clicking the search button in My Recipes and search-as-you-type functionality is retained.<br><br>
+			<b>{{ _('Version') }} 1.1:</b> Added accent color hover animations for recipes in My Recipes and Explore. Implemented a barcode scanning feature to quickly add items to Shopping Lists. Added the ability to print recipes and download as PDF. Updated translation files for all supported languages. Improved text contrast with light theme in My Recipes. Removed 2,000 recipes from Explore, reducing the number of recipes that fail to parse.<br><br>
+			<b>{{ _('Version') }} 1.0:</b> Addded new language support: Simplified Chinese, French, and Russian. Implemented pagination on Meal Planner Completed page. Developed a comprehensive REST API which can be used to interact with recipes, shopping lists, and meal plans. The API is disabled by default. Designed an API documentation page that correctly reflects app configuration.<br><br>
+			<b>{{ _('Version') }} 0.9:</b> Split Account page into two pages, Account Preferences and Account History. Account History displays a timeline of account events including account creation, email change, password change, recipe creation, and recipe edits. Added initial support for internationalization and localization. The first two supported languages are Spanish and German.<br><br>
+			<b>{{ _('Version') }} 0.8:</b> Developed UI scaling, users can select a preference on Account page that applies app wide. Implemented keyboard shortcuts that can be used to quickly highlight search boxes or navigate between pages. Improved app accessibility to allow navigating with TAB key. Added automated data rebuilding for "demo@tamariapp.com" demo account every 30 minutes. Redesigned Meal Planner with a "Completed" page that displays past meals and meal statistics.<br><br>
+			<b>{{ _('Version') }} 0.7:</b> In My Recipes, added a third display option called 'Details' and added three new 'Sort By' options. Created an Autofill from URL feature on Add Recipe page. Developed client side recipe export (.ZIP download) and import (restore from backup) to give users better control of account data. Increased font size of Recipe Detail page when viewing on smartphone.<br><br>
+			<b>{{ _('Version') }} 0.6:</b> Created an Information modal on Recipe Detail page. Redesigned the Explore page, it now displays pictures when browsing the recipe list. Explore recipe count has increased from 36,000 to 109,000, supported websites has increased from 3 to 50, and categories have increased from 7 to 16. Optional rate limiting has been implemented for use with public Tamari instances.<br><br>
+			<b>{{ _('Version') }} 0.5:</b> Developed a light theme, users can select theme on account page. Added servings and nutritional info to recipes (both optional). Increased max length of recipe instructions. Enabled app to run as standalone web app on iOS. Restructured application using Flask blueprints and moved all user data to app/appdata to make updating easier.<br><br>
+			<b>{{ _('Version') }} 0.4:</b> Changed to an open source font. Integrated new logo. Resigned account page to include a recipe count statistic, app wide accent color preference, and profile picture selection using new custom designed icons. Developed a Meal Planner that allows scheduling of recipes up to 30 days in advance.<br><br>
+			<b>{{ _('Version') }} 0.3:</b> Added ability to upload images. Optimized templates for mobile devices. Developed a Shopping Lists page that allows the creation of shopping lists and list items. Developed Explore page with support for three websites and Explore Search. Implemented type to search in My Recipes. Modified all templates to increase the usage of semantic elements and fix HTML validation errors.<br><br>
+			<b>{{ _('Version') }} 0.2:</b> Implemented functionality that is core to management of recipes. This includes viewing all recipes, viewing favorites, viewing categories, adding editing or deleting recipes, favoriting or unfavoriting recipes, making a recipe public or private, and adding or deleting categories.<br><br>
+			<b>{{ _('Version') }} 0.1:</b> Designed core template including navbar, account page, login page, and register page. Implemented basic account functionality including the ability to register an account, login with email and password, reset password over email, and update email or password on user account page.
+		</div>
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}

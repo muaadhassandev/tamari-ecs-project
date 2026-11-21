@@ -1,0 +1,81 @@
+.about-active {
+	background: linear-gradient(to bottom, var(--color-active-bg) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom;
+}
+.about-active:hover {
+	background: linear-gradient(to bottom, var(--color-active-bg-hover) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom !important;
+} 
+.mt-about {display: block !important;}
+/* THEMES */
+:root {
+	--color-block1: #ffffff;
+	--color-version: #111111;
+}
+[data-theme="light"] {
+	--color-block1: #000000;
+	--color-version: #efefef;
+}
+[data-theme="dark"] {
+	--color-block1: #ffffff;
+	--color-version: #111111;
+}
+/* SCALING */
+:root {
+	--font-block1: 16px;
+}
+[data-scaling="normal"] {
+	--font-block1: 16px;
+}
+[data-scaling="large"] {
+	--font-block1: 18px;
+}
+/* BLOCK 1 */
+#block1 {
+	width: 100%;
+	color: var(--color-block1);
+	font-size: var(--font-block1);
+	padding-top: 64px;
+}
+.block1inner {
+	height: 100%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	width: 1300px;
+}
+.block1inner h3 {padding-top: 8px;}
+.block1inner p {margin-bottom: 8px;}
+.version {
+	background: var(--color-version);
+	border-radius: 15px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 12px;
+	padding-bottom: 5px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 5px;
+}
+.pblock {
+	background-color: var(--color-dropdown-content-bg);
+	border: 1px solid var(--color-navbar-border-bottom);
+	border-radius: 10px;
+	margin-top: 14px;
+	padding: 10px;
+	width: calc(100% - 20px);
+}
+.credits {margin-bottom: 12px;}
+.changelog {margin-bottom: 20px;}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1300px) { 
+	.block1inner {width: 100%;}
+	#block1 p {padding-left: 10px; padding-right: 10px;}
+	.block1inner h3 {padding-left: 10px; padding-right: 10px;}
+	.version {margin-left: 10px; margin-right: 10px;}
+	.pblock {margin-left: 10px; margin-right: 10px; width: calc(100% - 40px);}
+}
+@media screen and (max-width: 700px) { 
+	#block1 {
+		padding-top: var(--height-mobile-navbar);
+		padding-bottom: 76px;
+	}
+}

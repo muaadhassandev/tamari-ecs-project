@@ -1,0 +1,2020 @@
+# Chinese (Simplified) translations for Tamari Recipe Manager.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the Tamari Recipe Manager project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-09-02 20:27-0400\n"
+"PO-Revision-Date: 2025-10-26 19:05-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: zh_Hans <LL@li.org>\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app/account/email.py:11
+msgid "Reset Your Password"
+msgstr "重置密码"
+
+#: app/account/forms.py:9 app/account/forms.py:15 app/account/forms.py:27
+#: app/account/forms.py:49 app/templates/account-preferences-bak.html:164
+#: app/templates/account-preferences-bak.html:165
+#: app/templates/account-preferences.html:164
+#: app/templates/account-preferences.html:165 app/templates/login.html:54
+#: app/templates/register.html:39 app/templates/request-reset.html:38
+msgid "Email"
+msgstr "电子邮件"
+
+#: app/account/forms.py:10 app/account/forms.py:16 app/account/forms.py:53
+#: app/templates/login.html:60 app/templates/register.html:45
+#: app/templates/set-password.html:38
+msgid "Password"
+msgstr "密码"
+
+#: app/account/forms.py:11
+msgid "Remember Me"
+msgstr "记住我"
+
+#: app/account/forms.py:12 app/account/routes.py:67
+#: app/templates/login.html:36 app/templates/register.html:34
+msgid "Sign In"
+msgstr "登录"
+
+#: app/account/forms.py:16 app/account/forms.py:53
+msgid "Must be 3-64 characters long."
+msgstr "长度必须为 3-64 个字符。"
+
+#: app/account/forms.py:17 app/account/forms.py:54
+#: app/templates/register.html:51 app/templates/set-password.html:44
+msgid "Repeat Password"
+msgstr "重复密码"
+
+#: app/account/forms.py:18 app/account/routes.py:145
+#: app/templates/login.html:37 app/templates/navbar.html:413
+#: app/templates/navbar.html:474 app/templates/register.html:35
+msgid "Register"
+msgstr "注册"
+
+#: app/account/forms.py:24 app/account/forms.py:41
+msgid "Please use a different email address."
+msgstr "请使用不同的电子邮件地址。"
+
+#: app/account/forms.py:28 app/templates/account-preferences-bak.html:171
+#: app/templates/account-preferences-bak.html:172
+#: app/templates/account-preferences.html:171
+#: app/templates/account-preferences.html:172
+msgid "New Password"
+msgstr "新密码"
+
+#: app/account/forms.py:29 app/templates/account-preferences-bak.html:178
+#: app/templates/account-preferences-bak.html:179
+#: app/templates/account-preferences.html:178
+#: app/templates/account-preferences.html:179
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: app/account/forms.py:30 app/account/forms.py:46
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: app/account/forms.py:50
+msgid "Request Reset"
+msgstr "请求重置"
+
+#: app/account/forms.py:55 app/account/routes.py:707
+msgid "Set Password"
+msgstr "设置密码"
+
+#: app/account/forms.py:58 app/explore/forms.py:18 app/explore/forms.py:21
+#: app/myrecipes/forms.py:35 app/myrecipes/forms.py:56
+#: app/myrecipes/forms.py:60 app/myrecipes/forms.py:85
+#: app/myrecipes/forms.py:89 app/myrecipes/forms.py:92
+#: app/shoplists/forms.py:18 app/shoplists/forms.py:25
+msgid "Submit"
+msgstr "提交"
+
+#: app/account/routes.py:41 app/templates/navbar.html:356
+#: app/templates/navbar.html:369 app/templates/navbar.html:431
+msgid "About"
+msgstr "关于"
+
+#: app/account/routes.py:42
+msgid "Credits, changelog, and other information about the Tamari web app."
+msgstr "有关 Tamari 网络应用程序的荣誉、更新日志和其他信息。"
+
+#: app/account/routes.py:60
+msgid "Invalid email or password"
+msgstr "电子邮件或密码无效"
+
+#: app/account/routes.py:67
+msgid "Sign In to the Tamari web app."
+msgstr "登录 Tamari 网络应用程序。"
+
+#: app/account/routes.py:73
+msgid "You have successfully signed out."
+msgstr "您已成功退出。"
+
+#: app/account/routes.py:99
+msgid "email is already taken."
+msgstr "电子邮件已被占用。"
+
+#: app/account/routes.py:102 app/account/routes.py:205
+msgid "email is invalid."
+msgstr "电子邮件无效。"
+
+#: app/account/routes.py:105 app/account/routes.py:202
+msgid "passwords do not match."
+msgstr "密码不匹配。"
+
+#: app/account/routes.py:108
+msgid "password must be 3-64 characters."
+msgstr "密码必须为 3-64 个字符。"
+
+#: app/account/routes.py:143
+msgid "You have been registered! Please sign in."
+msgstr "您已注册！请登录。"
+
+#: app/account/routes.py:146
+msgid "Register an account with the Tamari web app."
+msgstr "在 Tamari 网络应用程序上注册一个账户。"
+
+#: app/account/routes.py:175
+msgid "account changes restricted for demo account."
+msgstr "账户更改仅限于模拟账户。"
+
+#: app/account/routes.py:208
+msgid "password must be between 3 and 64 characters."
+msgstr "密码必须在 3 到 64 个字符之间。"
+
+#: app/account/routes.py:220 app/account/routes.py:250
+msgid "Your changes have been saved."
+msgstr "您的更改已保存。"
+
+#: app/account/routes.py:225
+msgid "No changes were made."
+msgstr "未作改动。"
+
+#: app/account/routes.py:234
+msgid "please select theme and scaling."
+msgstr "请选择主题和比例。"
+
+#: app/account/routes.py:305
+msgid "data import restricted for demo account."
+msgstr "模拟账户数据导入受限。"
+
+#: app/account/routes.py:322
+msgid "backup is invalid, _recipes.csv in ZIP is missing columns."
+msgstr "备份无效，ZIP 中的 _recipes.csv 缺少列。"
+
+#: app/account/routes.py:490
+msgid "No new recipes added. All recipes in the backup are already present."
+msgstr "未添加新食谱。备份中的所有食谱都已存在。"
+
+#: app/account/routes.py:492
+msgid "Success: "
+msgstr "成功："
+
+#: app/account/routes.py:492
+msgid " recipes have been imported."
+msgstr " 已导入食谱。"
+
+#: app/account/routes.py:494
+msgid "backup is invalid, _recipes.csv is missing from ZIP."
+msgstr "备份无效，ZIP 中缺少 _recipes.csv。"
+
+#: app/account/routes.py:495
+msgid "Account Preferences"
+msgstr "账户首选项"
+
+#: app/account/routes.py:496
+msgid "View and modify account preferences for your Tamari account."
+msgstr "查看和修改 Tamari 帐户的首选项。"
+
+#: app/account/routes.py:535
+msgid "Category: "
+msgstr "类别："
+
+#: app/account/routes.py:549
+msgid "Account registered with Tamari."
+msgstr "在 Tamari 注册的账户。"
+
+#: app/account/routes.py:563
+msgid "New Email: "
+msgstr "新电子邮件："
+
+#: app/account/routes.py:577
+msgid "Changed Tamari password. Devices remained signed in."
+msgstr "更改了 Tamari 密码。设备仍处于登录状态。"
+
+#: app/account/routes.py:612
+msgid "Account History"
+msgstr "账户历史"
+
+#: app/account/routes.py:613
+msgid "Account History displays a timeline of events, or changes to your account."
+msgstr "账户历史会显示事件或账户更改的时间轴。"
+
+#: app/account/routes.py:623
+msgid "account deletion restricted for demo account."
+msgstr "限制删除模拟账户。"
+
+#: app/account/routes.py:628
+msgid "there was a problem deleting your account"
+msgstr "删除您的帐户时出现问题"
+
+#: app/account/routes.py:667
+msgid "Your account has been deleted."
+msgstr "您的账户已被删除。"
+
+#: app/account/routes.py:681
+msgid "Password reset disabled for demo."
+msgstr "演示版禁用密码重置。"
+
+#: app/account/routes.py:685
+msgid "Check your email for instructions."
+msgstr "请查看电子邮件中的说明。"
+
+#: app/account/routes.py:687 app/templates/request-reset.html:34
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: app/account/routes.py:688
+msgid "Reset the password for your Tamari account."
+msgstr "重置您的 Tamari 账户密码。"
+
+#: app/account/routes.py:695
+msgid "Please sign out before setting a new password."
+msgstr "设置新密码前请先退出。"
+
+#: app/account/routes.py:699
+msgid "Password reset token is invalid."
+msgstr "密码重置令牌无效。"
+
+#: app/account/routes.py:705
+msgid "Your new password has been set."
+msgstr "您的新密码已设置。"
+
+#: app/account/routes.py:708
+msgid "Set a new password for your Tamari account."
+msgstr "为您的 Tamari 账户设置新密码。"
+
+#: app/errors/handlers.py:11
+msgid "The attached photo is too large."
+msgstr "所附照片太大。"
+
+#: app/explore/forms.py:12 app/myrecipes/forms.py:15 app/shoplists/forms.py:12
+msgid "Cannot contain <, >, {, }, ;, or *"
+msgstr "不能包含 <, >, {, }, ; 或 *"
+
+#: app/explore/routes.py:50 app/templates/navbar.html:353
+#: app/templates/navbar.html:366 app/templates/navbar.html:428
+msgid "Explore"
+msgstr "探索"
+
+#: app/explore/routes.py:51
+msgid "Explore page allows you to browse and search a collection of over 100,000 recipes."
+msgstr "探索页面允许您浏览和搜索 100,000 多种食谱。"
+
+#: app/explore/routes.py:137
+msgid "Explore Search"
+msgstr "探索搜索"
+
+#: app/explore/routes.py:138
+msgid "Search results for the Explore page, all matching recipes are shown here."
+msgstr "探索页面的搜索结果，所有匹配的食谱都显示在这里。"
+
+#: app/explore/routes.py:146
+msgid "All Recipes 🍽️"
+msgstr "所有食谱 🍽️"
+
+#: app/explore/routes.py:149 app/templates/explore.html:31
+msgid "30 Minute"
+msgstr "30 分钟"
+
+#: app/explore/routes.py:152 app/templates/explore.html:36
+#: app/templates/explore.html:39
+msgid "Air Fryer"
+msgstr "空气炸锅"
+
+#: app/explore/routes.py:155 app/templates/explore.html:44
+#: app/templates/explore.html:47
+msgid "Beef"
+msgstr "牛肉"
+
+#: app/explore/routes.py:158 app/templates/explore.html:52
+#: app/templates/explore.html:55
+msgid "Breakfast"
+msgstr "早餐"
+
+#: app/explore/routes.py:161 app/templates/explore.html:60
+#: app/templates/explore.html:63
+msgid "Chicken"
+msgstr "鸡肉"
+
+#: app/explore/routes.py:164 app/templates/explore.html:68
+#: app/templates/explore.html:71
+msgid "Dessert"
+msgstr "甜点"
+
+#: app/explore/routes.py:167 app/templates/explore.html:76
+#: app/templates/explore.html:79
+msgid "Dinner"
+msgstr "晚餐"
+
+#: app/explore/routes.py:170 app/templates/explore.html:84
+#: app/templates/explore.html:87
+msgid "Drinks"
+msgstr "饮料"
+
+#: app/explore/routes.py:173 app/templates/explore.html:92
+#: app/templates/explore.html:95
+msgid "Low Carb"
+msgstr "低碳水化合物"
+
+#: app/explore/routes.py:176 app/templates/explore.html:100
+#: app/templates/explore.html:103
+msgid "Lunch"
+msgstr "午餐"
+
+#: app/explore/routes.py:179 app/templates/explore.html:108
+#: app/templates/explore.html:111
+msgid "Salads"
+msgstr "沙拉"
+
+#: app/explore/routes.py:182 app/templates/explore.html:116
+#: app/templates/explore.html:119
+msgid "Seafood"
+msgstr "海鲜"
+
+#: app/explore/routes.py:185 app/templates/explore.html:124
+#: app/templates/explore.html:127
+msgid "Slow Cooker"
+msgstr "慢炖锅"
+
+#: app/explore/routes.py:188 app/templates/explore.html:132
+#: app/templates/explore.html:135
+msgid "Snacks"
+msgstr "小吃"
+
+#: app/explore/routes.py:191 app/templates/explore.html:140
+#: app/templates/explore.html:143
+msgid "Soup"
+msgstr "汤类"
+
+#: app/explore/routes.py:194 app/templates/explore.html:148
+#: app/templates/explore.html:151
+msgid "Vegetarian"
+msgstr "素食"
+
+#: app/explore/routes.py:197 app/templates/500.html:11
+#: app/templates/explore-group.html:50
+#: app/templates/explore-recipe-detail.html:132
+#: app/templates/explore-recipe-detail.html:138 app/templates/explore.html:180
+#: app/templates/recipe-detail.html:245 app/templates/recipe-detail.html:249
+msgid "Error"
+msgstr "错误"
+
+#: app/explore/routes.py:245
+msgid "All recipes are listed for the selected Explore category."
+msgstr "所有食谱均按所选探索类别列出。"
+
+#: app/explore/routes.py:1376
+msgid "The recipe has been saved to My Recipes."
+msgstr "食谱已保存到 \"我的食谱\"。"
+
+#: app/explore/routes.py:1378
+msgid "The recipe is missing ingredients or instructions and cannot be imported."
+msgstr "食谱缺少配料或说明，无法导入。"
+
+#: app/explore/routes.py:1380
+msgid "This recipe is already saved in My Recipes."
+msgstr "此食谱已保存在 \"我的食谱 \"中。"
+
+#: app/explore/routes.py:1381
+msgid "Explore Recipe Detail"
+msgstr "探索食谱详情"
+
+#: app/explore/routes.py:1382
+msgid "View the details for the selected Explore page recipe."
+msgstr "查看所选探索页面食谱的详细信息。"
+
+#: app/mealplanner/routes.py:70
+msgid "Meal Planner (Upcoming)"
+msgstr "膳食计划器（即将推出）"
+
+#: app/mealplanner/routes.py:71
+msgid "View recipes planned over the next 30 days in Meal Planner Upcoming."
+msgstr "在餐食计划（即将推出）中查看未来30天的食谱。"
+
+#: app/mealplanner/routes.py:176
+msgid "Meal Planner (Completed)"
+msgstr "膳食计划表（已完成）"
+
+#: app/mealplanner/routes.py:177
+msgid "View Recipes that have been completed in the Meal Planner."
+msgstr "查看已在膳食计划器中完成的食谱。"
+
+#: app/mealplanner/routes.py:188 app/mealplanner/routes.py:195
+msgid "meal plan does not exist or you lack permission to remove it."
+msgstr "用餐计划不存在，或者您没有删除该计划的权限。"
+
+#: app/mealplanner/routes.py:193
+msgid "The meal plan has been deleted."
+msgstr "用餐计划已删除。"
+
+#: app/myrecipes/forms.py:24
+msgid "Invalid URL."
+msgstr "无效 URL。"
+
+#: app/myrecipes/forms.py:29
+msgid "Recipe Size"
+msgstr "食谱大小"
+
+#: app/myrecipes/forms.py:29 app/templates/account-preferences-bak.html:93
+#: app/templates/account-preferences.html:93
+msgid "Large"
+msgstr "大型"
+
+#: app/myrecipes/forms.py:29
+msgid "Small"
+msgstr "小型"
+
+#: app/myrecipes/forms.py:29
+msgid "Details"
+msgstr "详细信息"
+
+#: app/myrecipes/forms.py:30
+msgid "Title"
+msgstr "标题"
+
+#: app/myrecipes/forms.py:30
+msgid "Title (desc)"
+msgstr "标题（降序）"
+
+#: app/myrecipes/forms.py:30
+msgid "Category"
+msgstr "类别"
+
+#: app/myrecipes/forms.py:30
+msgid "Category (desc)"
+msgstr "类别（降序）"
+
+#: app/myrecipes/forms.py:30
+msgid "Oldest first"
+msgstr "年龄最大者优先"
+
+#: app/myrecipes/forms.py:30
+msgid "Newest first"
+msgstr "最新最先"
+
+#: app/myrecipes/forms.py:31 app/myrecipes/forms.py:81
+msgid "Save"
+msgstr "节省"
+
+#: app/myrecipes/forms.py:34 app/templates/categories.html:61
+msgid "Add a Category"
+msgstr "添加类别"
+
+#: app/myrecipes/routes.py:211 app/templates/all-recipes.html:13
+#: app/templates/categories.html:13 app/templates/explore.html:154
+#: app/templates/favorites.html:13
+msgid "All Recipes"
+msgstr "所有食谱"
+
+#: app/myrecipes/routes.py:212
+msgid "View all recipes saved in your account. This is the home page of the Tamari web app."
+msgstr "查看保存在您账户中的所有食谱。这是 Tamari 网络应用程序的主页。"
+
+#: app/myrecipes/routes.py:341 app/templates/all-recipes.html:14
+#: app/templates/categories.html:14 app/templates/favorites.html:14
+msgid "Favorites"
+msgstr "收藏夹"
+
+#: app/myrecipes/routes.py:342
+msgid "View all recipes that have been marked as favorites in your Tamari account."
+msgstr "查看您的 Tamari 账户中已标记为收藏夹的所有食谱。"
+
+#: app/myrecipes/routes.py:351 app/myrecipes/routes.py:364
+#: app/myrecipes/routes.py:377 app/myrecipes/routes.py:390
+msgid "recipe does not exist or you do not have permission to modify it."
+msgstr "配方不存在，或者您没有修改该配方的权限。"
+
+#: app/myrecipes/routes.py:355
+msgid "This recipe has been added to your Favorites."
+msgstr "此食谱已添加到您的收藏夹。"
+
+#: app/myrecipes/routes.py:368
+msgid "This recipe has been removed from your Favorites."
+msgstr "此食谱已从您的收藏夹中删除。"
+
+#: app/myrecipes/routes.py:381
+msgid "You can now share the URL for this recipe."
+msgstr "现在您可以共享该食谱的 URL。"
+
+#: app/myrecipes/routes.py:394
+msgid "The recipe URL can no longer be shared."
+msgstr "食谱 URL 已无法共享。"
+
+#: app/myrecipes/routes.py:544
+msgid " items have been added to "
+msgstr " 项目已添加到 "
+
+#: app/myrecipes/routes.py:544
+msgid " shopping list."
+msgstr " 购物清单。"
+
+#: app/myrecipes/routes.py:547
+msgid "all ingredients from this recipe are already on your shopping list."
+msgstr "本食谱的所有配料都已列在您的购物清单上。"
+
+#: app/myrecipes/routes.py:550
+msgid "please select a shopping list."
+msgstr "请选择购物清单。"
+
+#: app/myrecipes/routes.py:558
+msgid "please select a date."
+msgstr "请选择日期。"
+
+#: app/myrecipes/routes.py:573
+msgid "This recipe has been added to your meal plan."
+msgstr "此食谱已添加到您的膳食计划中。"
+
+#: app/myrecipes/routes.py:575
+msgid "the selected date in invalid."
+msgstr "所选日期无效。"
+
+#: app/myrecipes/routes.py:577
+msgid "this recipe is already scheduled for the selected date."
+msgstr "该食谱已安排在所选日期。"
+
+#: app/myrecipes/routes.py:579
+msgid "View details for the selected recipe saved in My Recipes."
+msgstr "查看保存在我的食谱中的所选食谱的详细信息。"
+
+#: app/myrecipes/routes.py:785
+msgid "the category you entered already exists."
+msgstr "您输入的类别已经存在。"
+
+#: app/myrecipes/routes.py:787
+msgid "you are limited to 40 categories."
+msgstr "您只能选择 40 个类别。"
+
+#: app/myrecipes/routes.py:798
+msgid "The category has been added."
+msgstr "类别已添加。"
+
+#: app/myrecipes/routes.py:800 app/templates/all-recipes.html:15
+#: app/templates/categories.html:15 app/templates/favorites.html:15
+msgid "Categories"
+msgstr "类别"
+
+#: app/myrecipes/routes.py:801
+msgid "Displays a list of your saved categories and all recipes saved in the selected category."
+msgstr "显示已保存类别的列表和所选类别中保存的所有食谱。"
+
+#: app/myrecipes/routes.py:915
+msgid "Displays a list of your saved categories and all recipes in the selected category."
+msgstr "显示已保存类别和所选类别中所有食谱的列表。"
+
+#: app/myrecipes/routes.py:927
+msgid "category does not exist or you do not have permission to remove it."
+msgstr "类别不存在，或者您没有删除该类别的权限。"
+
+#: app/myrecipes/routes.py:929
+msgid "Miscellaneous cannot be deleted because it is the default category."
+msgstr "杂项无法删除，因为它是默认类别。"
+
+#: app/myrecipes/routes.py:937
+msgid "Category has been removed."
+msgstr "类别已删除。"
+
+#: app/myrecipes/routes.py:939
+msgid "category does not exist."
+msgstr "类别不存在。"
+
+#: app/myrecipes/routes.py:949
+msgid "recipe does not exist or you do not have permission to delete it."
+msgstr "配方不存在，或者您没有删除配方的权限。"
+
+#: app/myrecipes/routes.py:973
+msgid "Recipe has been removed."
+msgstr "配方已删除。"
+
+#: app/myrecipes/routes.py:1527
+msgid "The form was autofilled successfully."
+msgstr "表格自动填写成功。"
+
+#: app/myrecipes/routes.py:1529
+msgid "Some fields have been autofilled, please manually complete the remaining."
+msgstr "部分字段已自动填写，请手动填写剩余字段。"
+
+#: app/myrecipes/routes.py:1531
+msgid "Error: could not autofill from the given URL."
+msgstr "错误：无法从给定的 URL 自动填写。"
+
+#: app/myrecipes/routes.py:1628
+msgid "The recipe has been added."
+msgstr "食谱已添加。"
+
+#: app/myrecipes/routes.py:1630 app/templates/add-recipe.html:43
+msgid "Add a New Recipe"
+msgstr "添加新食谱"
+
+#: app/myrecipes/routes.py:1631
+msgid "Use the provided form to add a new recipe to your account."
+msgstr "使用提供的表格在您的账户中添加新食谱。"
+
+#: app/myrecipes/routes.py:1649
+msgid "recipe does not exist or you do not have permission to edit it."
+msgstr "配方不存在，或者您没有编辑该配方的权限。"
+
+#: app/myrecipes/routes.py:1761
+msgid "The recipe has been updated."
+msgstr "食谱已更新。"
+
+#: app/myrecipes/routes.py:1763 app/templates/recipe-detail.html:188
+msgid "Edit Recipe"
+msgstr "编辑食谱"
+
+#: app/myrecipes/routes.py:1764
+msgid "Use the provided form to edit details for the requested recipe."
+msgstr "使用所提供的表格编辑所申请食谱的详细信息。"
+
+#: app/shoplists/forms.py:17 app/templates/shopping-lists.html:35
+msgid "Add a List"
+msgstr "添加列表"
+
+#: app/shoplists/forms.py:22
+msgid "Add Item"
+msgstr "添加项目"
+
+#: app/shoplists/routes.py:45
+msgid "the shopping list you entered already exists."
+msgstr "您输入的购物清单已经存在。"
+
+#: app/shoplists/routes.py:47
+msgid "you are limited to 20 shopping lists."
+msgstr "您只能购买 20 份购物清单。"
+
+#: app/shoplists/routes.py:58
+msgid "The shopping list has been added."
+msgstr "购物清单已添加。"
+
+#: app/shoplists/routes.py:62 app/shoplists/routes.py:100
+msgid "the list item you entered already exists."
+msgstr "您输入的列表项目已经存在。"
+
+#: app/shoplists/routes.py:64
+msgid "you are limited to 100 items per list."
+msgstr "每份清单仅限 100 个项目。"
+
+#: app/shoplists/routes.py:75 app/shoplists/routes.py:113
+msgid "The item has been added."
+msgstr "项目已添加。"
+
+#: app/shoplists/routes.py:77 app/templates/navbar.html:354
+#: app/templates/navbar.html:367 app/templates/navbar.html:429
+msgid "Shopping Lists"
+msgstr "购物清单"
+
+#: app/shoplists/routes.py:78
+msgid "Display all saved shopping lists and list items for the selected list."
+msgstr "显示所选清单的所有已保存购物清单和清单项目。"
+
+#: app/shoplists/routes.py:89
+msgid "the list you requested does not exist."
+msgstr "您要求的列表不存在。"
+
+#: app/shoplists/routes.py:102
+msgid "you are limited to 70 items per list."
+msgstr "每份清单仅限 70 个项目。"
+
+#: app/shoplists/routes.py:116
+msgid "Display all list items for the selected shopping list."
+msgstr "显示所选购物清单的所有清单项目。"
+
+#: app/shoplists/routes.py:127 app/shoplists/routes.py:138
+msgid "shopping list does not exist."
+msgstr "购物清单不存在。"
+
+#: app/shoplists/routes.py:129
+msgid "cannot be deleted because it is the default shopping list."
+msgstr "不能删除，因为它是默认购物清单。"
+
+#: app/shoplists/routes.py:136
+msgid "Shopping list has been removed."
+msgstr "购物清单已删除。"
+
+#: app/shoplists/routes.py:151 app/shoplists/routes.py:158
+#: app/shoplists/routes.py:171 app/shoplists/routes.py:181
+msgid "item does not exist."
+msgstr "项目不存在。"
+
+#: app/shoplists/routes.py:156
+msgid "The item has been removed."
+msgstr "该项目已被删除。"
+
+#: app/templates/404.html:11
+msgid "Not Found"
+msgstr "未找到"
+
+#: app/templates/404.html:12
+msgid "The page you requested was not found."
+msgstr "未找到您请求的页面。"
+
+#: app/templates/404.html:12 app/templates/500.html:12
+msgid "Go home."
+msgstr "回家吧"
+
+#: app/templates/500.html:12
+msgid "An unexpected error has occurred. Sorry for the inconvenience!"
+msgstr "出现意外错误。不便之处，敬请原谅！"
+
+#: app/templates/about.html:11
+msgid "Tamari is open source software provided with GNU General Public License v3.0."
+msgstr "Tamari 是开源软件，采用 GNU General Public License v3.0。"
+
+#: app/templates/about.html:12 app/templates/about.html:23
+#: app/templates/about.html:24 app/templates/about.html:25
+#: app/templates/about.html:26 app/templates/about.html:27
+#: app/templates/about.html:28 app/templates/about.html:29
+#: app/templates/about.html:30
+msgid "Version"
+msgstr "版本"
+
+#: app/templates/about.html:15
+msgid "Developed by Alex Bates."
+msgstr "由亚历克斯-贝茨开发。"
+
+#: app/templates/about.html:16
+msgid "Profile picture and Explore category icons designed by Arsyadi Yulian."
+msgstr "Arsyadi Yulian 设计的简介图片和 \"探索 \"类别图标。"
+
+#: app/templates/about.html:17
+msgid "Icons used by buttons and default recipe photos are licensed via the Noun Project."
+msgstr "按钮中使用的图标和默认菜谱照片已获得 Noun Project 的许可。"
+
+#: app/templates/about.html:18
+msgid "Inter font is licensed under the SIL Open Font License 1.1."
+msgstr "Inter 字体采用 SIL Open Font License 1.1 许可。"
+
+#: app/templates/about.html:19
+msgid "The jQuery library is licensed under the MIT License."
+msgstr "jQuery 库采用 MIT 许可授权。"
+
+#: app/templates/about.html:21
+msgid "Changelog"
+msgstr "更新日志"
+
+#: app/templates/account-history.html:11
+#: app/templates/account-preferences-bak.html:11
+#: app/templates/account-preferences.html:11 app/templates/navbar.html:357
+#: app/templates/navbar.html:406 app/templates/navbar.html:435
+msgid "My Account"
+msgstr "我的账户"
+
+#: app/templates/account-history.html:13
+#: app/templates/account-preferences-bak.html:13
+#: app/templates/account-preferences.html:13
+msgid "Preferences"
+msgstr "首选项"
+
+#: app/templates/account-history.html:13
+#: app/templates/account-preferences-bak.html:13
+#: app/templates/account-preferences.html:13
+msgid "Navigate to Account Preferences"
+msgstr "导航至账户首选项"
+
+#: app/templates/account-history.html:14
+#: app/templates/account-preferences-bak.html:14
+#: app/templates/account-preferences.html:14
+msgid "History"
+msgstr "历史"
+
+#: app/templates/account-history.html:14
+#: app/templates/account-preferences-bak.html:14
+#: app/templates/account-preferences.html:14
+msgid "Navigate to Account History"
+msgstr "导航至账户历史记录"
+
+#: app/templates/account-history.html:34 app/templates/account-history.html:45
+msgid "This list displays changes to recipes and your account. To view Meal Plan history, go to Meal Planner Completed."
+msgstr "此列表显示对食谱和您的账户所做的更改。要查看膳食计划历史记录，请转到膳食计划已完成。"
+
+#: app/templates/account-history.html:110 app/templates/all-recipes.html:142
+#: app/templates/categories.html:162 app/templates/explore-group.html:35
+#: app/templates/explore-search.html:35 app/templates/favorites.html:123
+#: app/templates/mobile-category.html:106
+msgid "Navigate to previous page"
+msgstr "导航到上一页"
+
+#: app/templates/account-history.html:111
+#: app/templates/account-history.html:112 app/templates/all-recipes.html:143
+#: app/templates/all-recipes.html:144 app/templates/categories.html:163
+#: app/templates/categories.html:164 app/templates/explore-group.html:36
+#: app/templates/explore-group.html:37 app/templates/explore-search.html:36
+#: app/templates/explore-search.html:37 app/templates/favorites.html:124
+#: app/templates/favorites.html:125 app/templates/mobile-category.html:107
+#: app/templates/mobile-category.html:108
+msgid "Previous"
+msgstr "上一页"
+
+#: app/templates/account-history.html:116 app/templates/all-recipes.html:148
+#: app/templates/categories.html:168 app/templates/explore-group.html:41
+#: app/templates/explore-search.html:41 app/templates/favorites.html:129
+#: app/templates/mobile-category.html:112
+msgid "Navigate to next page"
+msgstr "导航至下一页"
+
+#: app/templates/account-history.html:117
+#: app/templates/account-history.html:118 app/templates/all-recipes.html:149
+#: app/templates/all-recipes.html:150 app/templates/categories.html:169
+#: app/templates/categories.html:170 app/templates/explore-group.html:42
+#: app/templates/explore-group.html:43 app/templates/explore-search.html:42
+#: app/templates/explore-search.html:43 app/templates/favorites.html:130
+#: app/templates/favorites.html:131 app/templates/mobile-category.html:113
+#: app/templates/mobile-category.html:114
+msgid "Next"
+msgstr "下一页"
+
+#: app/templates/account-preferences-bak.html:35
+#: app/templates/account-preferences.html:35
+msgid "User Stats"
+msgstr "用户统计"
+
+#: app/templates/account-preferences-bak.html:73
+#: app/templates/account-preferences.html:73
+msgid "Registered"
+msgstr "注册"
+
+#: app/templates/account-preferences-bak.html:74
+#: app/templates/account-preferences.html:74
+msgid "Last Visit"
+msgstr "最后一次访问"
+
+#: app/templates/account-preferences-bak.html:75
+#: app/templates/account-preferences.html:75
+#, python-format
+msgid "You have %(rec_count)d recipes saved."
+msgstr "您已保存了 %(rec_count)d 份食谱。"
+
+#: app/templates/account-preferences-bak.html:79
+#: app/templates/account-preferences.html:79
+msgid "Select Theme"
+msgstr "选择主题"
+
+#: app/templates/account-preferences-bak.html:82
+#: app/templates/account-preferences-bak.html:91
+#: app/templates/account-preferences.html:82
+#: app/templates/account-preferences.html:91 app/templates/add-recipe.html:57
+#: app/templates/edit-recipe.html:57 app/templates/recipe-detail.html:22
+#: app/templates/recipe-detail.html:41
+msgid "Choose here"
+msgstr "在此选择"
+
+#: app/templates/account-preferences-bak.html:83
+#: app/templates/account-preferences.html:83
+msgid "System Default"
+msgstr "系统默认值"
+
+#: app/templates/account-preferences-bak.html:84
+#: app/templates/account-preferences.html:84
+msgid "Light"
+msgstr "灯光"
+
+#: app/templates/account-preferences-bak.html:85
+#: app/templates/account-preferences.html:85
+msgid "Dark"
+msgstr "黑暗"
+
+#: app/templates/account-preferences-bak.html:88
+#: app/templates/account-preferences.html:88
+msgid "Font Size and Scaling"
+msgstr "字体大小和缩放"
+
+#: app/templates/account-preferences-bak.html:92
+#: app/templates/account-preferences.html:92
+msgid "Normal"
+msgstr "正常"
+
+#: app/templates/account-preferences-bak.html:98
+#: app/templates/account-preferences-bak.html:102
+#: app/templates/account-preferences-bak.html:106
+#: app/templates/account-preferences-bak.html:110
+#: app/templates/account-preferences.html:98
+#: app/templates/account-preferences.html:102
+#: app/templates/account-preferences.html:106
+#: app/templates/account-preferences.html:110
+msgid "Select Profile Picture"
+msgstr "选择简介图片"
+
+#: app/templates/account-preferences-bak.html:100
+#: app/templates/account-preferences-bak.html:104
+#: app/templates/account-preferences-bak.html:108
+#: app/templates/account-preferences-bak.html:112
+#: app/templates/account-preferences.html:100
+#: app/templates/account-preferences.html:104
+#: app/templates/account-preferences.html:108
+#: app/templates/account-preferences.html:112
+msgid "Profile Picture"
+msgstr "简介图片"
+
+#: app/templates/account-preferences-bak.html:115
+#: app/templates/account-preferences.html:115
+msgid "Select Accent Color"
+msgstr "选择主色调"
+
+#: app/templates/account-preferences-bak.html:117
+#: app/templates/account-preferences.html:117
+msgid "Select Blue Accent Color"
+msgstr "选择蓝色点缀色"
+
+#: app/templates/account-preferences-bak.html:119
+#: app/templates/account-preferences.html:119
+msgid "Blue"
+msgstr "蓝色"
+
+#: app/templates/account-preferences-bak.html:121
+#: app/templates/account-preferences.html:121
+msgid "Select Green Accent Color"
+msgstr "选择绿色点缀色"
+
+#: app/templates/account-preferences-bak.html:123
+#: app/templates/account-preferences.html:123
+msgid "Green"
+msgstr "绿色"
+
+#: app/templates/account-preferences-bak.html:125
+#: app/templates/account-preferences.html:125
+msgid "Select Purple Accent Color"
+msgstr "选择紫色点缀色"
+
+#: app/templates/account-preferences-bak.html:127
+#: app/templates/account-preferences.html:127
+msgid "Purple"
+msgstr "紫色"
+
+#: app/templates/account-preferences-bak.html:129
+#: app/templates/account-preferences.html:129
+msgid "Select Pink Accent Color"
+msgstr "选择粉色点缀色"
+
+#: app/templates/account-preferences-bak.html:131
+#: app/templates/account-preferences.html:131
+msgid "Pink"
+msgstr "粉红色"
+
+#: app/templates/account-preferences-bak.html:138
+#: app/templates/account-preferences.html:138
+msgid "Export or Import Data"
+msgstr "导出或导入数据"
+
+#: app/templates/account-preferences-bak.html:141
+#: app/templates/account-preferences.html:141
+msgid "Export feature is disabled because you have more than 750 recipes."
+msgstr "导出功能已禁用，因为您的食谱已超过 750 个。"
+
+#: app/templates/account-preferences-bak.html:143
+#: app/templates/account-preferences.html:143
+msgid "Download a .ZIP backup of your recipes, favorites, categories, and recipe photos."
+msgstr "下载食谱、收藏夹、类别和食谱照片的 .ZIP 备份。"
+
+#: app/templates/account-preferences-bak.html:146
+#: app/templates/account-preferences.html:146
+msgid "Download"
+msgstr "下载"
+
+#: app/templates/account-preferences-bak.html:149
+#: app/templates/account-preferences.html:149
+msgid "Export feature is disabled because you have no saved recipes."
+msgstr "导出功能已禁用，因为您没有保存食谱。"
+
+#: app/templates/account-preferences-bak.html:151
+#: app/templates/account-preferences.html:151
+msgid "Restore from backup. Only recipes not present will be added, existing recipes will not be changed or overwritten."
+msgstr "从备份恢复。只添加不存在的食谱，现有食谱不会被更改或覆盖。"
+
+#: app/templates/account-preferences-bak.html:154
+#: app/templates/account-preferences.html:154
+msgid "Select ZIP archive to restore from backup"
+msgstr "选择要从备份恢复的 ZIP 存档"
+
+#: app/templates/account-preferences-bak.html:155
+#: app/templates/account-preferences.html:155
+msgid "Upload"
+msgstr "上传"
+
+#: app/templates/account-preferences-bak.html:159
+#: app/templates/account-preferences.html:159
+msgid "Update or Delete Account"
+msgstr "更新或删除账户"
+
+#: app/templates/account-preferences-bak.html:186
+#: app/templates/account-preferences.html:186
+msgid "Are you sure you want to delete your account? This action cannot be undone."
+msgstr "您确定要删除账户吗？此操作无法撤销。"
+
+#: app/templates/account-preferences-bak.html:186
+#: app/templates/account-preferences.html:186
+msgid "Delete Account"
+msgstr "删除账户"
+
+#: app/templates/add-recipe.html:30
+msgid "Autofill From URL"
+msgstr "自动填写来自网址"
+
+#: app/templates/add-recipe.html:34 app/templates/add-recipe.html:35
+msgid "Recipe URL"
+msgstr "食谱网址"
+
+#: app/templates/add-recipe.html:47 app/templates/add-recipe.html:48
+#: app/templates/edit-recipe.html:47 app/templates/edit-recipe.html:48
+msgid "Recipe Name"
+msgstr "食谱名称"
+
+#: app/templates/add-recipe.html:55 app/templates/add-recipe.html:56
+#: app/templates/edit-recipe.html:55 app/templates/edit-recipe.html:56
+msgid "Select Category"
+msgstr "选择类别"
+
+#: app/templates/add-recipe.html:68 app/templates/add-recipe.html:69
+#: app/templates/edit-recipe.html:68 app/templates/edit-recipe.html:69
+msgid "Attach Photo"
+msgstr "附上照片"
+
+#: app/templates/add-recipe.html:73 app/templates/add-recipe.html:74
+#: app/templates/edit-recipe.html:73 app/templates/edit-recipe.html:74
+msgid "Description"
+msgstr "说明"
+
+#: app/templates/add-recipe.html:74 app/templates/edit-recipe.html:74
+msgid "My crispy squash recipe."
+msgstr "我的脆南瓜食谱"
+
+#: app/templates/add-recipe.html:80 app/templates/add-recipe.html:81
+#: app/templates/edit-recipe.html:81 app/templates/edit-recipe.html:82
+msgid "URL"
+msgstr "网址"
+
+#: app/templates/add-recipe.html:87 app/templates/add-recipe.html:88
+#: app/templates/edit-recipe.html:88 app/templates/edit-recipe.html:89
+#: app/templates/explore-recipe-detail.html:41
+#: app/templates/recipe-detail.html:100
+msgid "Servings"
+msgstr "人次"
+
+#: app/templates/add-recipe.html:95 app/templates/edit-recipe.html:96
+msgid "Preparation Time (minutes)"
+msgstr "准备时间（分钟）"
+
+#: app/templates/add-recipe.html:96 app/templates/edit-recipe.html:97
+msgid "Preparation Time in minutes"
+msgstr "准备时间（分钟"
+
+#: app/templates/add-recipe.html:102 app/templates/edit-recipe.html:103
+msgid "Cook Time (minutes)"
+msgstr "烹饪时间（分钟）"
+
+#: app/templates/add-recipe.html:103 app/templates/edit-recipe.html:104
+msgid "Cook Time in minutes"
+msgstr "烹饪时间（分钟"
+
+#: app/templates/add-recipe.html:109 app/templates/edit-recipe.html:110
+msgid "Total Time (minutes)"
+msgstr "总时间（分钟）"
+
+#: app/templates/add-recipe.html:110 app/templates/edit-recipe.html:111
+msgid "Total Time in minutes"
+msgstr "总时间（分钟"
+
+#: app/templates/add-recipe.html:116 app/templates/edit-recipe.html:117
+msgid "Toggle Nutrition Info"
+msgstr "切换营养信息"
+
+#: app/templates/add-recipe.html:117 app/templates/edit-recipe.html:118
+msgid "Add Nutrition Info"
+msgstr "添加营养信息"
+
+#: app/templates/add-recipe.html:121 app/templates/edit-recipe.html:122
+msgid "Calories (kcal)"
+msgstr "卡路里（千卡）"
+
+#: app/templates/add-recipe.html:122 app/templates/all-recipes.html:118
+#: app/templates/categories.html:140 app/templates/edit-recipe.html:123
+#: app/templates/explore-recipe-detail.html:52 app/templates/favorites.html:99
+#: app/templates/mobile-category.html:84 app/templates/recipe-detail.html:111
+msgid "Calories"
+msgstr "卡路里"
+
+#: app/templates/add-recipe.html:128 app/templates/edit-recipe.html:129
+msgid "Carbs (g)"
+msgstr "碳水化合物（克）"
+
+#: app/templates/add-recipe.html:129 app/templates/edit-recipe.html:130
+msgid "Carbs in grams"
+msgstr "以克为单位的碳水化合物"
+
+#: app/templates/add-recipe.html:135 app/templates/edit-recipe.html:136
+msgid "Protein (g)"
+msgstr "蛋白质（克）"
+
+#: app/templates/add-recipe.html:136 app/templates/edit-recipe.html:137
+msgid "Protein in grams"
+msgstr "蛋白质（克"
+
+#: app/templates/add-recipe.html:142 app/templates/edit-recipe.html:143
+msgid "Fat (g)"
+msgstr "脂肪（克）"
+
+#: app/templates/add-recipe.html:143 app/templates/edit-recipe.html:144
+msgid "Fat in grams"
+msgstr "脂肪（克"
+
+#: app/templates/add-recipe.html:151 app/templates/edit-recipe.html:152
+msgid "Sugar (g)"
+msgstr "糖（克）"
+
+#: app/templates/add-recipe.html:152 app/templates/edit-recipe.html:153
+msgid "Sugar in grams"
+msgstr "糖（克"
+
+#: app/templates/add-recipe.html:158 app/templates/edit-recipe.html:159
+msgid "Cholesterol (mg)"
+msgstr "胆固醇（毫克）"
+
+#: app/templates/add-recipe.html:159 app/templates/edit-recipe.html:160
+msgid "Cholesterol in milligrams"
+msgstr "胆固醇（毫克"
+
+#: app/templates/add-recipe.html:165 app/templates/edit-recipe.html:166
+msgid "Sodium (mg)"
+msgstr "钠（毫克）"
+
+#: app/templates/add-recipe.html:166 app/templates/edit-recipe.html:167
+msgid "Sodium in milligrams"
+msgstr "钠（毫克"
+
+#: app/templates/add-recipe.html:172 app/templates/edit-recipe.html:173
+msgid "Fiber (g)"
+msgstr "纤维（克）"
+
+#: app/templates/add-recipe.html:173 app/templates/edit-recipe.html:174
+msgid "Fiber in grams"
+msgstr "纤维（克"
+
+#: app/templates/add-recipe.html:182 app/templates/edit-recipe.html:183
+#: app/templates/explore-recipe-detail.html:118
+#: app/templates/recipe-detail.html:222
+msgid "Ingredients"
+msgstr "配料"
+
+#: app/templates/add-recipe.html:183 app/templates/edit-recipe.html:184
+msgid "2 Tbsp olive oil"
+msgstr "2 汤匙橄榄油"
+
+#: app/templates/add-recipe.html:183 app/templates/edit-recipe.html:184
+msgid "Ingredients separated by line break"
+msgstr "用换行符分隔的成分"
+
+#: app/templates/add-recipe.html:189 app/templates/edit-recipe.html:191
+#: app/templates/explore-recipe-detail.html:126
+#: app/templates/recipe-detail.html:237
+msgid "Instructions"
+msgstr "说明"
+
+#: app/templates/add-recipe.html:190 app/templates/edit-recipe.html:192
+msgid "Wash squash in sink to prepare."
+msgstr "在水槽中清洗南瓜，以备不时之需。"
+
+#: app/templates/add-recipe.html:190 app/templates/edit-recipe.html:192
+msgid "Instructions separated by line break"
+msgstr "用换行符分隔的指令"
+
+#: app/templates/all-recipes.html:13 app/templates/categories.html:13
+#: app/templates/favorites.html:13
+msgid "Navigate to All Recipes"
+msgstr "导航至所有食谱"
+
+#: app/templates/all-recipes.html:14 app/templates/categories.html:14
+#: app/templates/favorites.html:14
+msgid "Navigate to Favorites"
+msgstr "导航至收藏夹"
+
+#: app/templates/all-recipes.html:15 app/templates/categories.html:15
+#: app/templates/favorites.html:15
+msgid "Navigate to Categories"
+msgstr "导航至类别"
+
+#: app/templates/all-recipes.html:19 app/templates/categories.html:18
+#: app/templates/favorites.html:19
+msgid "Toggle display settings"
+msgstr "切换显示设置"
+
+#: app/templates/all-recipes.html:23 app/templates/categories.html:22
+#: app/templates/favorites.html:23
+msgid "Display Settings"
+msgstr "显示屏设置"
+
+#: app/templates/all-recipes.html:26 app/templates/categories.html:25
+#: app/templates/favorites.html:26
+msgid "Recipe Type"
+msgstr "食谱类型"
+
+#: app/templates/all-recipes.html:30 app/templates/categories.html:29
+#: app/templates/favorites.html:30
+msgid "Sort By"
+msgstr "排序方式"
+
+#: app/templates/all-recipes.html:38 app/templates/favorites.html:38
+msgid "Add a new recipe"
+msgstr "添加新食谱"
+
+#: app/templates/all-recipes.html:39 app/templates/all-recipes.html:40
+#: app/templates/favorites.html:39 app/templates/favorites.html:40
+msgid "Add Recipe"
+msgstr "添加食谱"
+
+#: app/templates/all-recipes.html:43 app/templates/explore-search.html:14
+#: app/templates/explore-search.html:50 app/templates/favorites.html:43
+msgid "Search"
+msgstr "搜索"
+
+#: app/templates/all-recipes.html:43 app/templates/explore.html:19
+#: app/templates/favorites.html:43
+msgid "Search recipes"
+msgstr "搜索食谱"
+
+#: app/templates/all-recipes.html:112 app/templates/categories.html:134
+#: app/templates/favorites.html:93 app/templates/mobile-category.html:78
+msgid "Prep"
+msgstr "准备工作"
+
+#: app/templates/all-recipes.html:113 app/templates/categories.html:135
+#: app/templates/favorites.html:94 app/templates/mobile-category.html:79
+msgid "Cook"
+msgstr "库克"
+
+#: app/templates/all-recipes.html:114 app/templates/categories.html:136
+#: app/templates/favorites.html:95 app/templates/mobile-category.html:80
+msgid "Total"
+msgstr "总计"
+
+#: app/templates/all-recipes.html:122 app/templates/categories.html:144
+#: app/templates/favorites.html:103 app/templates/mobile-category.html:88
+#: app/templates/recipe-detail.html:91 app/templates/recipe-detail.html:217
+msgid "Scheduled For"
+msgstr "预定"
+
+#: app/templates/all-recipes.html:124 app/templates/categories.html:146
+#: app/templates/favorites.html:105 app/templates/mobile-category.html:90
+#: app/templates/recipe-detail.html:88 app/templates/recipe-detail.html:214
+msgid "Last Prepared"
+msgstr "最后准备"
+
+#: app/templates/all-recipes.html:126 app/templates/categories.html:148
+#: app/templates/favorites.html:107 app/templates/mobile-category.html:92
+#: app/templates/recipe-detail.html:80 app/templates/recipe-detail.html:206
+msgid "Created"
+msgstr "创建"
+
+#: app/templates/all-recipes.html:137
+msgid "Welcome to Tamari!<br><br>There are no recipes to display.<br><br>Click the \"Add Recipe\" button above to get started."
+msgstr "欢迎来到 Tamari！<br><br>目前没有要显示的食谱。<br><br>点击上方的 \"添加食谱 \"按钮开始。"
+
+#: app/templates/categories.html:19 app/templates/favorites.html:20
+msgid "Settings"
+msgstr "设置"
+
+#: app/templates/categories.html:62
+msgid "Submit new category"
+msgstr "提交新类别"
+
+#: app/templates/categories.html:63
+msgid "Submit Category"
+msgstr "提交类别"
+
+#: app/templates/categories.html:72
+msgid "Are you sure you want to delete the category"
+msgstr "您确定要删除类别"
+
+#: app/templates/categories.html:72
+msgid "Delete category"
+msgstr "删除类别"
+
+#: app/templates/categories.html:83
+#, python-format
+msgid "Showing %(recipe_count)d recipes in \"%(query_string)s\" category."
+msgstr "显示\"%(query_string)s\"类别中的 %(recipe_count)d 食谱。"
+
+#: app/templates/categories.html:85
+msgid "The requested category does not exist."
+msgstr "请求的类别不存在。"
+
+#: app/templates/categories.html:88
+#, python-format
+msgid "Showing %(recipe_count)d recipes in \"Miscellaneous\" category."
+msgstr "显示 %(recipe_count)d \"Miscellaneous \"类别中的食谱。"
+
+#: app/templates/explore-group.html:15 app/templates/explore-search.html:15
+#, python-format
+msgid "Showing %(rec_first)s - %(rec_last)s of %(rec_count)s recipes."
+msgstr "显示 %(rec_count)s 食谱中的 %(rec_first)s - %(rec_last)s。"
+
+#: app/templates/explore-group.html:51
+msgid "The requested group does not exist or has no recipes."
+msgstr "请求的组不存在或没有配方。"
+
+#: app/templates/explore-recipe-detail.html:46
+#: app/templates/explore-recipe-detail.html:48
+#: app/templates/recipe-detail.html:105 app/templates/recipe-detail.html:107
+msgid "Nutrition (1 serv.)"
+msgstr "营养（1 份）"
+
+#: app/templates/explore-recipe-detail.html:47
+#: app/templates/explore-recipe-detail.html:49
+#: app/templates/recipe-detail.html:106 app/templates/recipe-detail.html:108
+msgid "Amount"
+msgstr "金额"
+
+#: app/templates/explore-recipe-detail.html:54
+#: app/templates/explore-recipe-detail.html:76
+#: app/templates/recipe-detail.html:113 app/templates/recipe-detail.html:135
+msgid "Sugar"
+msgstr "糖"
+
+#: app/templates/explore-recipe-detail.html:58
+#: app/templates/recipe-detail.html:117
+msgid "Carbs"
+msgstr "碳水化合物"
+
+#: app/templates/explore-recipe-detail.html:60
+#: app/templates/explore-recipe-detail.html:80
+#: app/templates/recipe-detail.html:119 app/templates/recipe-detail.html:139
+msgid "Cholesterol"
+msgstr "胆固醇"
+
+#: app/templates/explore-recipe-detail.html:64
+#: app/templates/recipe-detail.html:123
+msgid "Protein"
+msgstr "蛋白质"
+
+#: app/templates/explore-recipe-detail.html:66
+#: app/templates/explore-recipe-detail.html:84
+#: app/templates/recipe-detail.html:125 app/templates/recipe-detail.html:143
+msgid "Sodium"
+msgstr "钠"
+
+#: app/templates/explore-recipe-detail.html:70
+#: app/templates/recipe-detail.html:129
+msgid "Fat"
+msgstr "脂肪"
+
+#: app/templates/explore-recipe-detail.html:72
+#: app/templates/explore-recipe-detail.html:88
+#: app/templates/recipe-detail.html:131 app/templates/recipe-detail.html:147
+msgid "Fiber"
+msgstr "纤维"
+
+#: app/templates/explore-recipe-detail.html:94
+#: app/templates/recipe-detail.html:153
+msgid "Prep Time"
+msgstr "准备时间"
+
+#: app/templates/explore-recipe-detail.html:95
+#: app/templates/recipe-detail.html:154
+msgid "Cook Time"
+msgstr "烹饪时间"
+
+#: app/templates/explore-recipe-detail.html:96
+#: app/templates/recipe-detail.html:155
+msgid "Total Time"
+msgstr "总时间"
+
+#: app/templates/explore-recipe-detail.html:99
+msgid "Original recipe URL"
+msgstr "原始食谱网址"
+
+#: app/templates/explore-recipe-detail.html:104
+#: app/templates/explore-recipe-detail.html:105
+#: app/templates/explore-recipe-detail.html:106
+msgid "Save Recipe"
+msgstr "保存食谱"
+
+#: app/templates/explore-recipe-detail.html:110
+#: app/templates/explore-recipe-detail.html:111
+#: app/templates/explore-recipe-detail.html:112
+msgid "Login to Save Recipe"
+msgstr "登录保存食谱"
+
+#: app/templates/explore-recipe-detail.html:128
+#: app/templates/recipe-detail.html:240
+msgid "Step"
+msgstr "步骤"
+
+#: app/templates/explore-recipe-detail.html:133
+msgid "The retrieval or parsing of data for the requested recipe failed."
+msgstr "所请求配方的数据检索或解析失败。"
+
+#: app/templates/explore-recipe-detail.html:134
+msgid "Sometimes, refreshing the page will fix it."
+msgstr "有时，刷新页面就能解决问题。"
+
+#: app/templates/explore-recipe-detail.html:135
+msgid "If you see this error frequently, opening an Issue Report on Github may help get it resolved."
+msgstr "如果经常出现这种错误，在 Github 上打开问题报告可能有助于解决该问题。"
+
+#: app/templates/explore-recipe-detail.html:139
+msgid "The requested recipe cannot be found."
+msgstr "无法找到所需的食谱。"
+
+#: app/templates/explore-search.html:51
+msgid "No recipes were found."
+msgstr "没有找到食谱。"
+
+#: app/templates/explore.html:17
+msgid "Search 100,000+ Recipes"
+msgstr "搜索 100,000 多种食谱"
+
+#: app/templates/explore.html:23
+msgid "Browse By Category"
+msgstr "按类别浏览"
+
+#: app/templates/explore.html:28
+msgid "30 Minute Meals"
+msgstr "30 分钟美食"
+
+#: app/templates/explore.html:172
+msgid "See More"
+msgstr "查看更多"
+
+#: app/templates/explore.html:181
+msgid "Recipes failed to load."
+msgstr "食谱加载失败。"
+
+#: app/templates/favorites.html:118
+msgid "There are no recipes to display.<br><br>On the recipe detail page, click the \"Favorite\" button to add a recipe to your favorites."
+msgstr "没有要显示的食谱。<br><br>在食谱详情页面，单击\"收藏\"按钮将食谱添加到收藏夹。"
+
+#: app/templates/login.html:36 app/templates/register.html:34
+msgid "Navigate to Sign In page"
+msgstr "导航至登录页面"
+
+#: app/templates/login.html:37 app/templates/register.html:35
+msgid "Navigate to Register page"
+msgstr "导航至注册页面"
+
+#: app/templates/login.html:66
+msgid "Keep me Signed in"
+msgstr "让我保持登录状态"
+
+#: app/templates/login.html:73
+msgid "Reset Password?"
+msgstr "重置密码？"
+
+#: app/templates/meal-planner-completed.html:12
+#: app/templates/meal-planner-upcoming.html:12
+msgid "Upcoming"
+msgstr "即将推出"
+
+#: app/templates/meal-planner-completed.html:12
+#: app/templates/meal-planner-upcoming.html:12
+msgid "Navigate to Meal Planner (Upcoming)"
+msgstr "导航至膳食计划器（即将推出）"
+
+#: app/templates/meal-planner-completed.html:13
+#: app/templates/meal-planner-upcoming.html:13
+#: app/templates/mobile-shopping-list.html:51
+#: app/templates/shopping-lists.html:73
+msgid "Completed"
+msgstr "已完成"
+
+#: app/templates/meal-planner-completed.html:13
+#: app/templates/meal-planner-upcoming.html:13
+msgid "Navigate to Meal Planner (Completed)"
+msgstr "导航至膳食计划器（已完成）"
+
+#: app/templates/meal-planner-completed.html:35
+msgid "Statistics"
+msgstr "统计资料"
+
+#: app/templates/meal-planner-completed.html:36
+msgid "Recipes Prepared"
+msgstr "准备食谱"
+
+#: app/templates/meal-planner-completed.html:39
+#: app/templates/meal-planner-completed.html:54
+msgid "Past Week"
+msgstr "过去一周"
+
+#: app/templates/meal-planner-completed.html:43
+#: app/templates/meal-planner-completed.html:58
+msgid "Past Month"
+msgstr "上个月"
+
+#: app/templates/meal-planner-completed.html:47
+#: app/templates/meal-planner-completed.html:62
+msgid "Past Year"
+msgstr "过去一年"
+
+#: app/templates/meal-planner-completed.html:69
+msgid "Completed Recipes"
+msgstr "已完成的食谱"
+
+#: app/templates/meal-planner-completed.html:89
+msgid "Previously prepared recipes will be displayed here."
+msgstr "这里将显示以前准备的食谱。"
+
+#: app/templates/meal-planner-upcoming.html:36
+msgid "All Upcoming Days"
+msgstr "所有即将到来的日子"
+
+#: app/templates/meal-planner-upcoming.html:47
+msgid "All Planned Recipes"
+msgstr "所有计划食谱"
+
+#: app/templates/meal-planner-upcoming.html:56
+#: app/templates/meal-planner-upcoming.html:57
+#: app/templates/meal-planner-upcoming.html:80
+#: app/templates/meal-planner-upcoming.html:81
+msgid "Remove Meal Plan"
+msgstr "删除膳食计划"
+
+#: app/templates/meal-planner-upcoming.html:70
+msgid "You have no recipes saved to the meal planner."
+msgstr "您的膳食计划中没有保存食谱。"
+
+#: app/templates/meal-planner-upcoming.html:75
+msgid "There are no meals planned for the selected day."
+msgstr "所选日期不安排用餐。"
+
+#: app/templates/meal-planner-upcoming.html:92
+msgid "Invalid Date"
+msgstr "无效日期"
+
+#: app/templates/meal-planner-upcoming.html:93
+msgid "The requested date is invalid or cannot be searched."
+msgstr "请求的日期无效或无法搜索。"
+
+#: app/templates/mobile-category.html:30
+#, python-format
+msgid "Showing %(recipe_count)s recipes in \"%(catname)s\" category."
+msgstr "显示 \"%(catname)s\" 类别中的 %(recipe_count)s 食谱。"
+
+#: app/templates/mobile-category.html:32
+msgid "The requested category could not be found."
+msgstr "无法找到所请求的类别。"
+
+#: app/templates/mobile-shopping-list.html:31
+#: app/templates/shopping-lists.html:53
+msgid "List"
+msgstr "列表"
+
+#: app/templates/mobile-shopping-list.html:33
+#: app/templates/shopping-lists.html:55
+msgid "Click an item to add or remove it from Completed."
+msgstr "单击项目可从 \"已完成 \"中添加或删除该项目。"
+
+#: app/templates/mobile-shopping-list.html:35
+#: app/templates/shopping-lists.html:57
+msgid "To Buy"
+msgstr "购买"
+
+#: app/templates/mobile-shopping-list.html:39
+#: app/templates/mobile-shopping-list.html:40
+#: app/templates/mobile-shopping-list.html:55
+#: app/templates/mobile-shopping-list.html:56
+#: app/templates/shopping-lists.html:61 app/templates/shopping-lists.html:62
+#: app/templates/shopping-lists.html:77 app/templates/shopping-lists.html:78
+msgid "Remove List Item"
+msgstr "删除列表项目"
+
+#: app/templates/mobile-shopping-list.html:44
+#: app/templates/mobile-shopping-list.html:60
+#: app/templates/shopping-lists.html:66 app/templates/shopping-lists.html:82
+msgid "For recipe"
+msgstr "食谱"
+
+#: app/templates/mobile-shopping-list.html:67
+#: app/templates/shopping-lists.html:89
+msgid "This list has no items saved. Add one below or from a Recipe Detail page."
+msgstr "此列表未保存任何项目。请在下面或食谱详细信息页面添加一个。"
+
+#: app/templates/mobile-shopping-list.html:69
+#: app/templates/shopping-lists.html:91
+msgid "Add an Item"
+msgstr "添加项目"
+
+#: app/templates/mobile-shopping-list.html:72
+#: app/templates/shopping-lists.html:94
+msgid "(4) yellow squash"
+msgstr "(4) 黄瓜"
+
+#: app/templates/mobile-shopping-list.html:76
+#: app/templates/shopping-lists.html:98
+msgid "Are you sure you want to delete the shopping list"
+msgstr "您确定要删除购物清单吗？"
+
+#: app/templates/mobile-shopping-list.html:77
+#: app/templates/shopping-lists.html:99
+msgid "Delete This List"
+msgstr "删除此列表"
+
+#: app/templates/navbar.html:352 app/templates/navbar.html:365
+#: app/templates/navbar.html:427
+msgid "My Recipes"
+msgstr "我的食谱"
+
+#: app/templates/navbar.html:355 app/templates/navbar.html:368
+#: app/templates/navbar.html:430
+msgid "Meal Planner"
+msgstr "膳食计划"
+
+#: app/templates/navbar.html:367
+msgid "Lists"
+msgstr "购物清单"
+
+#: app/templates/navbar.html:368
+msgid "Planner"
+msgstr "膳食计划"
+
+#: app/templates/navbar.html:407 app/templates/navbar.html:436
+msgid "Sign Out"
+msgstr "签出"
+
+#: app/templates/navbar.html:412 app/templates/navbar.html:473
+msgid "Login"
+msgstr "登录"
+
+#: app/templates/recipe-detail.html:13 app/templates/recipe-detail.html:32
+msgid "Close Popup Window"
+msgstr "关闭弹出窗口"
+
+#: app/templates/recipe-detail.html:15
+msgid "Add to List"
+msgstr "添加到列表"
+
+#: app/templates/recipe-detail.html:16
+msgid "Ingredients from this recipe will be added to the following shopping list."
+msgstr "本食谱中的配料将添加到以下购物清单中。"
+
+#: app/templates/recipe-detail.html:21
+msgid "Select Shopping List"
+msgstr "选择购物清单"
+
+#: app/templates/recipe-detail.html:34
+msgid "Add to Meal Planner"
+msgstr "添加到膳食计划"
+
+#: app/templates/recipe-detail.html:35
+msgid "This recipe will be added to your Meal Plan for the following day."
+msgstr "该食谱将添加到您第二天的膳食计划中。"
+
+#: app/templates/recipe-detail.html:40
+msgid "Select Date"
+msgstr "选择日期"
+
+#: app/templates/recipe-detail.html:76 app/templates/recipe-detail.html:77
+#: app/templates/recipe-detail.html:202 app/templates/recipe-detail.html:203
+msgid "Toggle Information Modal"
+msgstr "切换信息模式"
+
+#: app/templates/recipe-detail.html:82 app/templates/recipe-detail.html:208
+msgid "Edited"
+msgstr "编辑"
+
+#: app/templates/recipe-detail.html:85 app/templates/recipe-detail.html:211
+msgid "Times Prepared"
+msgstr "准备时间"
+
+#: app/templates/recipe-detail.html:153 app/templates/recipe-detail.html:154
+#: app/templates/recipe-detail.html:155
+msgid "min"
+msgstr "分钟"
+
+#: app/templates/recipe-detail.html:163
+msgid "Favorite Recipe"
+msgstr "最喜爱的食谱"
+
+#: app/templates/recipe-detail.html:164 app/templates/recipe-detail.html:165
+msgid "Favorite"
+msgstr "最爱"
+
+#: app/templates/recipe-detail.html:168
+msgid "Unfavorite Recipe"
+msgstr "不喜欢的食谱"
+
+#: app/templates/recipe-detail.html:169 app/templates/recipe-detail.html:170
+msgid "Unfavorite"
+msgstr "不喜欢"
+
+#: app/templates/recipe-detail.html:174
+msgid "Make Recipe Public"
+msgstr "公开食谱"
+
+#: app/templates/recipe-detail.html:175 app/templates/recipe-detail.html:176
+msgid "Make Public"
+msgstr "公开"
+
+#: app/templates/recipe-detail.html:179
+msgid "Make Recipe Private"
+msgstr "将食谱设为私密食谱"
+
+#: app/templates/recipe-detail.html:180 app/templates/recipe-detail.html:181
+msgid "Make Private"
+msgstr "使私人"
+
+#: app/templates/recipe-detail.html:184
+msgid "Schedule Recipe"
+msgstr "时间表食谱"
+
+#: app/templates/recipe-detail.html:185 app/templates/recipe-detail.html:186
+msgid "Schedule"
+msgstr "时间安排"
+
+#: app/templates/recipe-detail.html:190
+msgid "Edit"
+msgstr "编辑"
+
+#: app/templates/recipe-detail.html:192
+msgid "Are you sure you want to delete this recipe?"
+msgstr "您确定要删除这份食谱吗？"
+
+#: app/templates/recipe-detail.html:193
+msgid "Delete Recipe"
+msgstr "删除食谱"
+
+#: app/templates/recipe-detail.html:194 app/templates/recipe-detail.html:195
+msgid "Delete"
+msgstr "删除"
+
+#: app/templates/recipe-detail.html:231
+msgid "Add Items to Shopping List"
+msgstr "将物品添加到购物清单"
+
+#: app/templates/recipe-detail.html:246 app/templates/recipe-detail.html:250
+msgid "The requested recipe either cannot be found or you do not have permission to view it."
+msgstr "要么找不到所需的食谱，要么您没有查看该食谱的权限。"
+
+#: app/templates/set-password.html:34
+msgid "Set New Password"
+msgstr "设置新密码"
+
+#: app/templates/shopping-lists.html:30
+msgid "Your Lists"
+msgstr "您的清单"
+
+#: app/templates/shopping-lists.html:36 app/templates/shopping-lists.html:37
+msgid "Submit new list"
+msgstr "提交新名单"
+
+#: app/templates/shopping-lists.html:103
+msgid "List Not Found"
+msgstr "未找到列表"
+
+#: app/templates/shopping-lists.html:104
+msgid "The requested shopping list does not exist."
+msgstr "请求的购物清单不存在。"
+
+#: app/templates/meal-planner-completed.html:51
+msgid "Days Cooked"
+msgstr "烹饪天数"
+
+msgid "Print"
+msgstr "打印"
+
+msgid "Download PDF"
+msgstr "下载 PDF"
+
+msgid "Print Recipe"
+msgstr "打印菜谱"
+
+msgid "Nutrition Facts"
+msgstr "营养成分"
+
+msgid "Per serving"
+msgstr "每份"
+
+msgid "The requested recipe is not available or no data was provided."
+msgstr "请求的配方不可用或未提供数据。"
+
+msgid "Calendar"
+msgstr "日历"
+
+msgid "Navigate to Meal Planner (Calendar)"
+msgstr "导航至膳食计划器（日历）"
+
+msgid "Add Recipe for Selected Day"
+msgstr "添加选定日期的食谱"
+
+msgid "Sun"
+msgstr "周日"
+
+msgid "Mon"
+msgstr "周一"
+
+msgid "Tue"
+msgstr "周二"
+
+msgid "Wed"
+msgstr "周三"
+
+msgid "Thu"
+msgstr "周四"
+
+msgid "Fri"
+msgstr "周五"
+
+msgid "Sat"
+msgstr "周六"
+
+msgid "Recents"
+msgstr "最近浏览"
+
+msgid "See all recently viewed recipes."
+msgstr "查看所有最近浏览的食谱。"
+
+msgid "Navigate to Recents"
+msgstr "转到最近浏览"
+
+msgid "There are no recents to display.<br><br>Go to the All Recipes page and click on a recipe."
+msgstr "没有可显示的最近浏览记录。<br><br>请转到“全部食谱”页面并点击一个食谱。"
+
+msgid "Advanced Search"
+msgstr "高级搜索"
+
+msgid "Search your recipes by title, category, ingredients, and instructions."
+msgstr "按标题、类别、配料和说明搜索您的食谱。"
+
+msgid "No results found for search term."
+msgstr "未找到符合搜索条件的结果。"
+
+msgid "Find By"
+msgstr "按条件查找"
+
+msgid "Invalid recipe selected."
+msgstr "选择的食谱无效。"
+
+msgid "no date specified."
+msgstr "未指定日期。"
+
+msgid "Meal Planner Calendar"
+msgstr "餐食规划日历"
+
+msgid "View recipes planned for the current month."
+msgstr "查看本月计划的食谱。"
+
+msgid "Meal Planner Calendar Details"
+msgstr "餐食规划日历详情"
+
+msgid "View recipes planned for a specific day."
+msgstr "查看特定日期计划的食谱。"
+
+msgid "Barcode Scanner"
+msgstr "条码扫描器"
+
+msgid "Air Fryer Squash"
+msgstr "空气炸锅南瓜"
+
+msgid "(3) yellow squash\n\n2 Tbsp olive oil\n\n# Optional Seasoning\n\n3/4 Tsp Oregano\n\n1/2 Tsp garlic powder"
+msgstr "(3) 个黄南瓜\n\n2 汤匙橄榄油\n\n# 可选调味料\n\n3/4 茶匙牛至\n\n1/2 茶匙蒜粉"
+
+msgid "# Prepare\n\nWash squash in sink to prepare.\n\nCut squash into thin circles.\n\nMix all ingredients in bowl.\n\n# Cook\n\nCook at 375F for 25 minutes."
+msgstr "# 准备\n\n在水槽中清洗黄南瓜，以备使用。\n\n将黄南瓜切成薄圆片。\n\n将所有食材放入碗中混合均匀。\n\n# 烹饪\n\n以 375°F 的温度烘烤 25 分钟。"
+
+msgid "Please log in to access this page"
+msgstr "请登录以查看此页面"
+
+msgid "Recently Prepared"
+msgstr "最近制作"
+
+msgid "Credits"
+msgstr "鸣谢"
+
+msgid "To try a demo, use the username \"demo@tamariapp.com\" and password \"demo\"."
+msgstr "要试用演示，请使用用户名 \"demo@tamariapp.com\" 和密码 \"demo\"。"
+
+msgid "Navigate to Meal Planner (Statistics)"
+msgstr "导航至膳食计划器（统计资料）"
+
+msgid "Days Cooked Per Month"
+msgstr "每月烹饪天数"
+
+msgid "Total days cooked per month over the last 12 months."
+msgstr "过去 12 个月内每月烹饪的总天数。"
+
+msgid "Most Popular Recipe Categories"
+msgstr "最受欢迎的食谱类别"
+
+msgid "Most common categories for recipes prepared over the last 12 months. Excludes upcoming meals."
+msgstr "过去 12 个月内最常见的食谱类别。不包括即将推出的餐点。"
+
+msgid "Line chart of days cooked per month"
+msgstr "每月烹饪天数的折线图"
+
+msgid "Pie chart of recipe categories"
+msgstr "食谱类别饼图"
+
+msgid "Months"
+msgstr "月份"
+
+msgid "Days"
+msgstr "天"
+
+msgid "API Status"
+msgstr "API 状态"
+
+msgid "ENABLED"
+msgstr "已启用"
+
+msgid "DISABLED"
+msgstr "已禁用"
+
+msgid "General Info"
+msgstr "常规信息"
+
+msgid "This is a REST API which can be used to interact with the Tamari application."
+msgstr "此 REST API 可用于与 Tamari 应用交互。"
+
+msgid "X-App-Name and X-App-Key headers are required for all endpoints, as configured in config.py."
+msgstr "根据 config.py 的配置，所有端点都需要 X-App-Name 和 X-App-Key 请求头。"
+
+msgid "X-App-Name and X-App-Key headers are not required, as configured in config.py."
+msgstr "根据 config.py 的配置，无需 X-App-Name 和 X-App-Key 请求头。"
+
+msgid "API Info"
+msgstr "API 信息"
+
+msgid "Registration token is invalid."
+msgstr "注册令牌无效。"
+
+msgid "Search 400,000+ Recipes"
+msgstr "搜索 400,000+ 个食谱"
+
+msgid "Browse By Country"
+msgstr "按国家浏览"
+
+msgid "Australia"
+msgstr "澳大利亚"
+
+msgid "Austria"
+msgstr "奥地利"
+
+msgid "Belgium"
+msgstr "比利时"
+
+msgid "Canada"
+msgstr "加拿大"
+
+msgid "Denmark"
+msgstr "丹麦"
+
+msgid "France"
+msgstr "法国"
+
+msgid "Germany"
+msgstr "德国"
+
+msgid "Greece"
+msgstr "希腊"
+
+msgid "India"
+msgstr "印度"
+
+msgid "Ireland"
+msgstr "爱尔兰"
+
+msgid "Italy"
+msgstr "意大利"
+
+msgid "Japan"
+msgstr "日本"
+
+msgid "Netherlands"
+msgstr "荷兰"
+
+msgid "Philippines"
+msgstr "菲律宾"
+
+msgid "Poland"
+msgstr "波兰"
+
+msgid "Spain"
+msgstr "西班牙"
+
+msgid "Sweden"
+msgstr "瑞典"
+
+msgid "Switzerland"
+msgstr "瑞士"
+
+msgid "United Kingdom"
+msgstr "英国"
+
+msgid "United States"
+msgstr "美国"

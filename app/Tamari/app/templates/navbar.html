@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+<script>window.DYN_ROOT_MARGIN = {{ dynrootmargin|default("120px", true)|tojson }};</script>
+<script src="{{ url_for('static', filename='theme-switch.js', _external=True) }}"></script>
+<script src="{{ url_for('static', filename='scaling.js', _external=True) }}"></script>
+<script src="{{ url_for('static', filename='jquery-3.7.0.min.js', _external=True) }}"></script>
+<script src="{{ url_for('static', filename='navbar-scripts.js', _external=True) }}"></script>
+{% if current_user.is_authenticated %}
+{% if current_user.pref_theme == 1 and current_user.pref_color == 0 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('light', 'light-blue');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 1 and current_user.pref_color == 1 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('light', 'light-green');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 1 and current_user.pref_color == 2 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('light', 'light-purple');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 1 and current_user.pref_color == 3 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('light', 'light-pink');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 2 and current_user.pref_color == 0 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('dark', 'dark-blue');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 2 and current_user.pref_color == 1 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('dark', 'dark-green');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 2 and current_user.pref_color == 2 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('dark', 'dark-purple');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 2 and current_user.pref_color == 3 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth('dark', 'dark-pink');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 0 and current_user.pref_color == 0 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth(null, 'blue');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 0 and current_user.pref_color == 1 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth(null, 'green');
+		themeElements();
+	});
+</script>
+{% elif current_user.pref_theme == 0 and current_user.pref_color == 2 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth(null, 'purple');
+		themeElements();
+	});
+</script>
+{% else %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeAuth(null, 'pink');
+		themeElements();
+	});
+</script>
+{% endif %}
+{% if current_user.pref_scaling == 1 %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		scalingAuth('large');
+	});
+</script>
+{% else %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		scalingAuth('normal');
+	});
+</script>
+{% endif %}
+{% else %}
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		themeNoAuth();
+		themeElements();
+	});
+</script>
+<script defer>
+	document.addEventListener("DOMContentLoaded", function() {
+		scalingNoAuth();
+	});
+</script>
+{% endif %}
+{% endblock %}
+
+{% block title %}{% if title %}{{ title }} - Tamari{% else %}Tamari{% endif %}{% endblock %}
+
+{% block extrastyles %}
+{% endblock %}
+
+{% block navbar %}
+<header id="navbar">
+	<div class="navbarinner">
+		<div class="navlogo"></div>
+		<div class="mobile-title">
+			{% if current_user.is_authenticated %}
+			<h1 class="mt-myrecipes">{{ _('My Recipes') }}</h1>
+			<h1 class="mt-explore">{{ _('Explore') }}</h1>
+			<h1 class="mt-lists">{{ _('Shopping Lists') }}</h1>
+			<h1 class="mt-mealplanner">{{ _('Meal Planner') }}</h1>
+			<h1 class="mt-about">{{ _('About') }}</h1>
+			<h1 class="mt-myaccount">{{ _('My Account') }}</h1>
+			<h1 class="mt-tam">Tamari</h1>
+			{% else %}
+			<h1 class="mt-tamari">Tamari</h1>
+			{% endif %}
+		</div>
+		{% if current_user.is_authenticated %}
+		<div class="navleft">
+			<ul>
+				<li class="myrecipes-active"><a href="{{ url_for('myrecipes.allRecipes') }}"><span>{{ _('My Recipes') }}</span></a></li
+				><li class="explore-active"><a href="{{ url_for('explore.explore') }}"><span>{{ _('Explore') }}</span></a></li
+				><li class="shoplist-active"><a href="{{ url_for('shoplists.shoppingLists') }}"><span class="linkfull">{{ _('Shopping Lists') }}</span><span class="linkshort">{{ _('Lists') }}</span></a></li
+				><li class="mealplanner-active"><a href="{{ url_for('mealplanner.mealPlannerCalendar') }}"><span class="linkfull">{{ _('Meal Planner') }}</span><span class="linkshort">{{ _('Planner') }}</span></a></li>
+			</ul>
+			<div class="scroll-arrow scroll-right"><img id="scroll-right" src="{{ url_for('static', filename='navbar-scroll-right.png', _external=True) }}" alt="Scroll Right"></div>
+        	<div class="scroll-arrow scroll-left"><img id="scroll-left" src="{{ url_for('static', filename='navbar-scroll-left.png', _external=True) }}" alt="Scroll Left"></div>
+		</div>
+		<nav class="navright" onclick="toggleDropdown()">
+			{% if current_user.pref_picture == 0 and current_user.pref_color == 0 %}
+			<div class="navrighticon icon-1-blue"></div>
+			{% elif current_user.pref_picture == 0 and current_user.pref_color == 1 %}
+			<div class="navrighticon icon-1-green"></div>
+			{% elif current_user.pref_picture == 0 and current_user.pref_color == 2 %}
+			<div class="navrighticon icon-1-purple"></div>
+			{% elif current_user.pref_picture == 0 and current_user.pref_color == 3 %}
+			<div class="navrighticon icon-1-pink"></div>
+			{% elif current_user.pref_picture == 1 and current_user.pref_color == 0 %}
+			<div class="navrighticon icon-2-blue"></div>
+			{% elif current_user.pref_picture == 1 and current_user.pref_color == 1 %}
+			<div class="navrighticon icon-2-green"></div>
+			{% elif current_user.pref_picture == 1 and current_user.pref_color == 2 %}
+			<div class="navrighticon icon-2-purple"></div>
+			{% elif current_user.pref_picture == 1 and current_user.pref_color == 3 %}
+			<div class="navrighticon icon-2-pink"></div>
+			{% elif current_user.pref_picture == 2 and current_user.pref_color == 0 %}
+			<div class="navrighticon icon-3-blue"></div>
+			{% elif current_user.pref_picture == 2 and current_user.pref_color == 1 %}
+			<div class="navrighticon icon-3-green"></div>
+			{% elif current_user.pref_picture == 2 and current_user.pref_color == 2 %}
+			<div class="navrighticon icon-3-purple"></div>
+			{% elif current_user.pref_picture == 2 and current_user.pref_color == 3 %}
+			<div class="navrighticon icon-3-pink"></div>
+			{% elif current_user.pref_picture == 3 and current_user.pref_color == 0 %}
+			<div class="navrighticon icon-4-blue"></div>
+			{% elif current_user.pref_picture == 3 and current_user.pref_color == 1 %}
+			<div class="navrighticon icon-4-green"></div>
+			{% elif current_user.pref_picture == 3 and current_user.pref_color == 2 %}
+			<div class="navrighticon icon-4-purple"></div>
+			{% else %}
+			<div class="navrighticon icon-4-pink"></div>
+			{% endif %}
+			<div class="dropdown-content" id="myDropdown">
+				<a href="{{ url_for('account.user') }}">{{ _('My Account') }}</a>
+				<a href="{{ url_for('account.about') }}">{{ _('About') }}</a>
+				<a href="{{ url_for('api_account.apiDocumentation') }}">{{ _('API') }}</a>
+				<a href="{{ url_for('account.logout') }}" class="navrightsignout">{{ _('Sign Out') }}</a>
+			</div>
+		</nav>
+		{% else %}
+		<ul class="navnoauth">
+			<li><a href="{{ url_for('account.login') }}"><span>{{ _('Login') }}</span></a></li
+			><li><a href="{{ url_for('account.register') }}"><span>{{ _('Register') }}</span></a></li>
+		</ul>
+		{% endif %}
+		<div class="mobile-dropdown">
+			<input type="checkbox" id="checkbox_toggle">
+			<label for="checkbox_toggle" class="hamburger">
+				<span class="line line-1"></span>
+				<span class="line line-2"></span>
+				<span class="line line-3"></span>
+			</label>
+			<div class="mobilebg">
+				<section>
+					{% if current_user.is_authenticated %}
+					<ul class="mobilebg-top" style="margin: 0; padding: 0;">
+						<li><a href="{{ url_for('myrecipes.allRecipes') }}">{{ _('My Recipes') }}</a></li>
+						<li><a href="{{ url_for('explore.explore') }}">{{ _('Explore') }}</a></li>
+						<li><a href="{{ url_for('shoplists.shoppingLists') }}">{{ _('Shopping Lists') }}</a></li>
+						<li><a href="{{ url_for('mealplanner.mealPlannerCalendar') }}">{{ _('Meal Planner') }}</a></li>
+						<li><a href="{{ url_for('account.about') }}">{{ _('About') }} Tamari</a></li>
+					</ul>
+					<hr>
+					<ul class="mobilebg-bottom">
+						<li><a href="{{ url_for('account.user') }}">{{ _('My Account') }}</a></li>
+						<li><a href="{{ url_for('account.logout') }}">{{ _('Sign Out') }}</a></li>
+					</ul>
+					{% if current_user.pref_picture == 0 and current_user.pref_color == 0 %}
+					<div class="drop-profile icon-1-blue">&nbsp;</div>
+					{% elif current_user.pref_picture == 0 and current_user.pref_color == 1 %}
+					<div class="drop-profile icon-1-green">&nbsp;</div>
+					{% elif current_user.pref_picture == 0 and current_user.pref_color == 2 %}
+					<div class="drop-profile icon-1-purple">&nbsp;</div>
+					{% elif current_user.pref_picture == 0 and current_user.pref_color == 3 %}
+					<div class="drop-profile icon-1-pink">&nbsp;</div>
+					{% elif current_user.pref_picture == 1 and current_user.pref_color == 0 %}
+					<div class="drop-profile icon-2-blue">&nbsp;</div>
+					{% elif current_user.pref_picture == 1 and current_user.pref_color == 1 %}
+					<div class="drop-profile icon-2-green">&nbsp;</div>
+					{% elif current_user.pref_picture == 1 and current_user.pref_color == 2 %}
+					<div class="drop-profile icon-2-purple">&nbsp;</div>
+					{% elif current_user.pref_picture == 1 and current_user.pref_color == 3 %}
+					<div class="drop-profile icon-2-pink">&nbsp;</div>
+					{% elif current_user.pref_picture == 2 and current_user.pref_color == 0 %}
+					<div class="drop-profile icon-3-blue">&nbsp;</div>
+					{% elif current_user.pref_picture == 2 and current_user.pref_color == 1 %}
+					<div class="drop-profile icon-3-green">&nbsp;</div>
+					{% elif current_user.pref_picture == 2 and current_user.pref_color == 2 %}
+					<div class="drop-profile icon-3-purple">&nbsp;</div>
+					{% elif current_user.pref_picture == 2 and current_user.pref_color == 3 %}
+					<div class="drop-profile icon-3-pink">&nbsp;</div>
+					{% elif current_user.pref_picture == 3 and current_user.pref_color == 0 %}
+					<div class="drop-profile icon-4-blue">&nbsp;</div>
+					{% elif current_user.pref_picture == 3 and current_user.pref_color == 1 %}
+					<div class="drop-profile icon-4-green">&nbsp;</div>
+					{% elif current_user.pref_picture == 3 and current_user.pref_color == 2 %}
+					<div class="drop-profile icon-4-purple">&nbsp;</div>
+					{% else %}
+					<div class="drop-profile icon-4-pink">&nbsp;</div>
+					{% endif %}
+					{% else %}
+					<ul>
+						<li><a href="{{ url_for('account.login') }}">{{ _('Login') }}</a></li>
+						<li><a href="{{ url_for('account.register') }}">{{ _('Register') }}</a></li>
+					</ul>
+					{% endif %}
+				</section>
+			</div>
+		</div>
+	</div>
+</header>
+{% endblock %}
+
+{% block footer %}
+<footer>
+	{% if current_user.is_authenticated %}
+	<nav class="mobile-tab-bar mobile-tab-bar-4">
+		<button class="mobile-tab-button tab-recipes-active" onclick="window.location.href='{{ url_for('myrecipes.allRecipes') }}';">
+			<span class="tab-btn-icon"><img id="footerRecipes" src="{{ url_for('static', filename='footer-recipes.png', _external=True) }}" alt="{{ _('My Recipes') }}"></span>
+			<span class="tab-btn-text">{{ _('Recipes') }}</span>
+		</button>
+		<button class="mobile-tab-button tab-explore-active" onclick="window.location.href='{{ url_for('explore.explore') }}';">
+			<span class="tab-btn-icon"><img id="footerExplore" src="{{ url_for('static', filename='footer-explore.png', _external=True) }}" alt="{{ _('Explore') }}"></span>
+			<span class="tab-btn-text">{{ _('Explore') }}</span>
+		</button>
+		<button class="mobile-tab-button tab-lists-active" onclick="window.location.href='{{ url_for('shoplists.shoppingLists') }}';">
+			<span class="tab-btn-icon"><img id="footerLists" src="{{ url_for('static', filename='footer-lists.png', _external=True) }}" alt="{{ _('Shopping Lists') }}"></span>
+			<span class="tab-btn-text">{{ _('Lists') }}</span>
+		</button>
+		<button class="mobile-tab-button tab-planner-active" onclick="window.location.href='{{ url_for('mealplanner.mealPlannerCalendar') }}';">
+			<span class="tab-btn-icon"><img id="footerPlanner" src="{{ url_for('static', filename='footer-planner.png', _external=True) }}" alt="{{ _('Meal Planner') }}"></span>
+			<span class="tab-btn-text">{{ _('Planner') }}</span>
+		</button>
+	</nav>
+	{% else %}
+	<nav class="mobile-tab-bar mobile-tab-bar-3">
+		<button class="mobile-tab-button tab-explore-active" onclick="window.location.href='{{ url_for('explore.explore') }}';">
+			<span class="tab-btn-icon"><img id="footerExplore" src="{{ url_for('static', filename='footer-recipes.png', _external=True) }}" alt="{{ _('Explore') }}"></span>
+			<span class="tab-btn-text">{{ _('Explore') }}</span>
+		</button>
+		<button class="mobile-tab-button" onclick="window.location.href='{{ url_for('account.login') }}';">
+			<span class="tab-btn-icon"><img id="footerLogin" src="{{ url_for('static', filename='footer-login.png', _external=True) }}" alt="{{ _('Login') }}"></span>
+			<span class="tab-btn-text">{{ _('Login') }}</span>
+		</button>
+		<button class="mobile-tab-button" onclick="window.location.href='{{ url_for('account.register') }}';">
+			<span class="tab-btn-icon"><img id="footerRegister" src="{{ url_for('static', filename='footer-register.png', _external=True) }}" alt="{{ _('Register') }}"></span>
+			<span class="tab-btn-text">{{ _('Register') }}</span>
+		</button>
+	</nav>
+	{% endif %}
+</footer>
+{% endblock %}

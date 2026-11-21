@@ -1,0 +1,149 @@
+{% extends "navbar.html" %}
+
+{% block styles %}
+	<link href="{{ url_for('static', filename='master.css', _external=True) }}" rel='stylesheet' type='text/css'>
+	<link href="{{ url_for('static', filename='account-history.css', _external=True) }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+<main id="block1" onclick="closeDropdown()">
+	<div class="block1inner">
+		<div id="recipenav"> 
+			<div class="recipenavleft">
+				<div class="recipenavleft-inner">
+					<input type="button" class="recbtn" onclick="window.location.href='{{ url_for('account.user') }}';" value="{{ _('Preferences') }}" aria-label="{{ _('Navigate to Account Preferences') }}"
+					><input type="button" class="recbtn recbtn-active" onclick="window.location.href='{{ url_for('account.accountHistory') }}';" value="{{ _('History') }}" aria-label="{{ _('Navigate to Account History') }}">
+				</div>
+				<div class="scroll-arrow-recip scroll-right-recip">
+					<img id="scroll-right-recip" src="{{ url_for('static', filename='navbar-scroll-right.png', _external=True) }}" alt="Scroll Right">
+				</div>
+				<div class="scroll-arrow-recip scroll-left-recip">
+					<img id="scroll-left-recip" src="{{ url_for('static', filename='navbar-scroll-left.png', _external=True) }}" alt="Scroll Left">
+				</div>
+			</div>
+		</div>
+		<h2>{{ _('My Account') }}</h2>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		{% set first_message = true %}
+		{% for message in messages %}
+		{% if first_message %}
+		{% if 'Error' in message or '错误' in message %}
+		<p id="flashed-err">{{ message }}</p>
+		{% set first_message = false %}
+		{% else %}
+		<p id="flashed-norm">{{ message }}</p>
+		{% set first_message = false %}
+		{% endif %}
+		{% else %}
+		<p style="display: none;">{{ message }}</p>
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+		<p id="historynotice">{{ _('This list displays changes to recipes and your account. To view Meal Plan history, go to Meal Planner Completed.') }}</p>
+		<div class="history">
+			{% for year, year_event in events_by_year.items() %}
+			<div class="yearcontainer">
+				<span class="year">{{ year }}</span>
+				<div class="yearafter"></div>
+			</div>
+			<div class="eventcontainer">
+			<div class="eventinner">
+				<ul>
+					<li class="lihidden">This list displays changes to recipes and your account. To view Meal Plan history, go to Meal Planner Completed.</li>
+					{% for event in year_event %}
+					<li>
+						<div class="event">
+							{% if event[0] %}
+							<h3 class="date">{{ event[0].strftime('%B %-d, %Y') }}</h3>
+							{% endif %}
+							{% if event[1] %}
+							<h1>{{ event[1] }}</h1>
+							{% endif %}
+							{% if event[2] %}
+							<h4>{{ event[2] }}</h4>
+							{% endif %}
+							{% if event[3] %}
+							<div class="eventimage recipe1" data-bgimage="{{ url_for('myrecipes.recipePhotos', filename=event[3], _external=True) }}"></div>
+							{% elif event[1] == 'Account Created' or event[1] == 'Account Email Changed' or event[1] == 'Account Password Changed' %}
+							{% if current_user.pref_picture == 0 and current_user.pref_color == 0 %}
+							<div class="eventimage icon-1-blue">&nbsp;</div>
+							{% elif current_user.pref_picture == 0 and current_user.pref_color == 1 %}
+							<div class="eventimage icon-1-green">&nbsp;</div>
+							{% elif current_user.pref_picture == 0 and current_user.pref_color == 2 %}
+							<div class="eventimage icon-1-purple">&nbsp;</div>
+							{% elif current_user.pref_picture == 0 and current_user.pref_color == 3 %}
+							<div class="eventimage icon-1-pink">&nbsp;</div>
+							{% elif current_user.pref_picture == 1 and current_user.pref_color == 0 %}
+							<div class="eventimage icon-2-blue">&nbsp;</div>
+							{% elif current_user.pref_picture == 1 and current_user.pref_color == 1 %}
+							<div class="eventimage icon-2-green">&nbsp;</div>
+							{% elif current_user.pref_picture == 1 and current_user.pref_color == 2 %}
+							<div class="eventimage icon-2-purple">&nbsp;</div>
+							{% elif current_user.pref_picture == 1 and current_user.pref_color == 3 %}
+							<div class="eventimage icon-2-pink">&nbsp;</div>
+							{% elif current_user.pref_picture == 2 and current_user.pref_color == 0 %}
+							<div class="eventimage icon-3-blue">&nbsp;</div>
+							{% elif current_user.pref_picture == 2 and current_user.pref_color == 1 %}
+							<div class="eventimage icon-3-green">&nbsp;</div>
+							{% elif current_user.pref_picture == 2 and current_user.pref_color == 2 %}
+							<div class="eventimage icon-3-purple">&nbsp;</div>
+							{% elif current_user.pref_picture == 2 and current_user.pref_color == 3 %}
+							<div class="eventimage icon-3-pink">&nbsp;</div>
+							{% elif current_user.pref_picture == 3 and current_user.pref_color == 0 %}
+							<div class="eventimage icon-4-blue">&nbsp;</div>
+							{% elif current_user.pref_picture == 3 and current_user.pref_color == 1 %}
+							<div class="eventimage icon-4-green">&nbsp;</div>
+							{% elif current_user.pref_picture == 3 and current_user.pref_color == 2 %}
+							<div class="eventimage icon-4-purple">&nbsp;</div>
+							{% else %}
+							<div class="eventimage icon-4-pink">&nbsp;</div>
+							{% endif %}
+							{% endif %}
+							{% if event[4] %}
+							<p>{{ event[4] }}</p>
+							{% endif %}
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% if prev_url or next_url %}
+		<div class="prevnext">
+			{% if prev_url %}
+			<button class="btn-prev" onclick="window.location.href='{{ prev_url }}';" aria-label="{{ _('Navigate to previous page') }}">
+				<span class="btn-prev-icon"><img id="previmg" src="{{ url_for('static', filename='prev.png', _external=True) }}" alt="{{ _('Previous') }}"></span>
+				<span class="btn-prev-text">{{ _('Previous') }}</span>
+			</button>
+			{% endif %}
+			{% if next_url %}
+			<button class="btn-next" onclick="window.location.href='{{ next_url }}';" aria-label="{{ _('Navigate to next page') }}">
+				<span class="btn-next-text">{{ _('Next') }}</span>
+				<span class="btn-next-icon"><img id="nextimg" src="{{ url_for('static', filename='next.png', _external=True) }}" alt="{{ _('Next') }}"></span>
+			</button>
+			{% endif %}
+		</div>
+		{% endif %}
+	</div>
+</main>
+{% endblock %}
+
+{% block shortcuts %}
+{% if current_user.is_authenticated %}
+	<script>
+		// CTRL+A keyboard shortcut to redirect to Add Recipe page, only when authenticated
+        $(document).ready(function() {
+            $(document).keydown(function(e) {
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    window.location.href = '/add-recipe';
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}
